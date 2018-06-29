@@ -1,9 +1,74 @@
-body{background:#4CAF50;color:#ffffff;font-size:14px;font-family:Tahoma,Helvetica,Arial,sans-serif;}
-a:link{color:LightBlue;}
-a:visited{color:LightBlue;}
-a:hover{color:LightBlue;}
-a:active{color:LightBlue;}
-.content{width:300px;margin:0 auto;}
-.item{white-space:nowrap;}
-.result{font-family:'Lucida Console', Monaco, monospace;font-size:12px;}
-.url{display:none;}
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #4CAF50;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+}
+
+p {
+  display: flex;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: LightBlue;
+}
+
+.content {
+  width: 600px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  #result {
+    column-count: 2;
+    column-gap: 20px;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    column-rule-color: white;
+  }
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+table caption {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.item {
+  white-space: nowrap;
+}
+
+.result {
+  width: 80px;
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: 12px;
+}
+
+img {
+  position: absolute;
+  opacity: 0;
+}
+
+.first {
+  background: BlueViolet;
+}
+
+.second {
+  background: DeepSkyBlue;
+}
+
+.last {
+  background: darkred;
+}

@@ -1,76 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>PING ms</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<script src="pingms.js"></script>
+  <meta charset="UTF-8">
+  <title>PING ms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="pingms.js"></script>
 </head>
+
 <body onload="main()">
-<div class="content">
-<h2>PING ms</h2>
-<p>Get milliseconds(ms) of HTTP ping, from browser, to cloud, excluding DNS latency</p>
-<h3>Vultr</h3>
-<p>
-<span class="item">Frankfurt&nbsp;<span class="result">N/A</span><span class="url">http://fra-de-ping.vultr.com/</span></span>
-<span class="item">Amsterdam&nbsp;<span class="result">N/A</span><span class="url">http://ams-nl-ping.vultr.com/</span></span>
-<span class="item">Paris&nbsp;<span class="result">N/A</span><span class="url">http://par-fr-ping.vultr.com/</span></span>
-<span class="item">London&nbsp;<span class="result">N/A</span><span class="url">http://lon-gb-ping.vultr.com/</span></span>
-<span class="item">Singapore&nbsp;<span class="result">N/A</span><span class="url">http://sgp-ping.vultr.com/</span></span>
-<span class="item">Tokyo&nbsp;<span class="result">N/A</span><span class="url">http://hnd-jp-ping.vultr.com/</span></span>
-<span class="item">New&nbsp;Jersey&nbsp;<span class="result">N/A</span><span class="url">http://nj-us-ping.vultr.com/</span></span>
-<span class="item">Chicago&nbsp;<span class="result">N/A</span><span class="url">http://il-us-ping.vultr.com/</span></span>
-<span class="item">Seattle&nbsp;<span class="result">N/A</span><span class="url">http://wa-us-ping.vultr.com/</span></span>
-<span class="item">Atlanta&nbsp;<span class="result">N/A</span><span class="url">http://ga-us-ping.vultr.com/</span></span>
-<span class="item">Miami&nbsp;<span class="result">N/A</span><span class="url">http://fl-us-ping.vultr.com/</span></span>
-<span class="item">Dallas&nbsp;<span class="result">N/A</span><span class="url">http://tx-us-ping.vultr.com/</span></span>
-<span class="item">Silicon&nbsp;Valley&nbsp;<span class="result">N/A</span><span class="url">http://sjo-ca-us-ping.vultr.com/</span></span>
-<span class="item">Los&nbsp;Angeles&nbsp;<span class="result">N/A</span><span class="url">http://lax-ca-us-ping.vultr.com/</span></span>
-<span class="item">Sydney&nbsp;<span class="result">N/A</span><span class="url">http://syd-au-ping.vultr.com/</span></span>
-</p>
-<h3>Linode</h3>
-<p>
-<span class="item">Newark&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.newark.linode.com/</span></span>
-<span class="item">Atlanta&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.atlanta.linode.com/</span></span>
-<span class="item">Dallas&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.dallas.linode.com/</span></span>
-<span class="item">Fremont&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.fremont.linode.com/</span></span>
-<span class="item">Frankfurt&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.frankfurt.linode.com/</span></span>
-<span class="item">London&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.london.linode.com/</span></span>
-<span class="item">Singapore&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.singapore.linode.com/</span></span>
-<span class="item">Tokyo&nbsp;2&nbsp;<span class="result">N/A</span><span class="url">http://speedtest.tokyo2.linode.com/</span></span>
-</p>
-<h3>DigitalOcean</h3>
-<p>
-<span class="item">NYC1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-nyc1.digitalocean.com/</span></span>
-<span class="item">NYC2&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-nyc2.digitalocean.com/</span></span>
-<span class="item">NYC3&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-nyc3.digitalocean.com/</span></span>
-<span class="item">AMS2&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-ams2.digitalocean.com/</span></span>
-<span class="item">AMS3&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-ams3.digitalocean.com/</span></span>
-<span class="item">SFO1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-sfo1.digitalocean.com/</span></span>
-<span class="item">SFO2&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-sfo2.digitalocean.com/</span></span>
-<span class="item">SGP1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-sgp1.digitalocean.com/</span></span>
-<span class="item">LON1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-lon1.digitalocean.com/</span></span>
-<span class="item">FRA1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-fra1.digitalocean.com/</span></span>
-<span class="item">TOR1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-tor1.digitalocean.com/</span></span>
-<span class="item">BLR1&nbsp;<span class="result">N/A</span><span class="url">http://speedtest-blr1.digitalocean.com/</span></span>
-</p>
-<h3>VirMach</h3>
-<p>
-<span class="item">Frankfurt&nbsp;<span class="result">N/A</span><span class="url">http://ffm.lg.virmach.com/</span></span>
-<span class="item">Amsterdam&nbsp;<span class="result">N/A</span><span class="url">http://ams.lg.virmach.com/</span></span>
-<span class="item">Buffalo&nbsp;<span class="result">N/A</span><span class="url">http://ny.lg.virmach.com/</span></span>
-<span class="item">Piscataway&nbsp;(NYC)&nbsp;<span class="result">N/A</span><span class="url">http://nj.lg.virmach.com/</span></span>
-<span class="item">Dallas&nbsp;<span class="result">N/A</span><span class="url">http://dal.lg.virmach.com/</span></span>
-<span class="item">Phoenix&nbsp;<span class="result">N/A</span><span class="url">http://phx.lg.virmach.com/</span></span>
-<span class="item">Los&nbsp;Angeles&nbsp;<span class="result">N/A</span><span class="url">http://la.lg.virmach.com/</span></span>
-<span class="item">DDoS-Protected&nbsp;Los&nbsp;Angeles&nbsp;<span class="result">N/A</span><span class="url">http://filtered-la.lg.virmach.com/</span></span>
-<span class="item">Chicago&nbsp;<span class="result">N/A</span><span class="url">http://chi.lg.virmach.com/</span></span>
-<span class="item">Seattle&nbsp;<span class="result">N/A</span><span class="url">http://sea.lg.virmach.com/</span></span>
-<span class="item">Atlanta&nbsp;<span class="result">N/A</span><span class="url">http://atl.lg.virmach.com/</span></span>
-<span class="item">San&nbsp;Jose&nbsp;<span class="result">N/A</span><span class="url">http://sj.lg.virmach.com/</span></span>
-</p>
-<p><a href="https://github.com/pingms/pingms">Source code and documentation at GitHub</a></p>
-</div>
+  <div class="content">
+    <h2>PING ms</h2>
+    <p>Get milliseconds(ms) of HTTP ping, from browser, to cloud, excluding DNS latency</p>
+    <div id="result">
+    </div>
+    <p>
+      <a href="https://github.com/pingms/pingms">Source code and documentation at GitHub</a>
+    </p>
+  </div>
 </body>
+
 </html>
