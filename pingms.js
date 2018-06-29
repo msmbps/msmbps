@@ -159,7 +159,7 @@ const data = {
 
 let nextTick = window.requestAnimationFrame || window.setTimeout // The delay function
 let tasks = [] // Pending task
-let img = document.createElement("img")
+let img = document.createElement("img") // Image for test
 //
 //
 // Prepare to run tests
@@ -212,7 +212,7 @@ function handleTasks() {
     const currentSubTasks = tasks.shift();
     const subResults = [];
     let startTime = 0;
-    function handleSubTasks() {
+    nextTick(function handleSubTasks() {
         if (currentSubTasks.length == 0) {
             subResults.sort(function(a, b) {
                 return a.delay - b.delay;
@@ -228,7 +228,7 @@ function handleTasks() {
         loadImg(task.url, function() {
             startTime = new Date().getTime();
             let finished = false;
-            // Second time to load image (measure delay)
+            // Update delay realtime
             nextTick(function rev() {
                 if (!finished) {
                     const now = new Date().getTime();
@@ -236,6 +236,7 @@ function handleTasks() {
                     nextTick(rev);
                 }
             });
+            // Second time to load image (measure latency)
             loadImg(task.url, function() {
                 finished = true;
                 const now = new Date().getTime();
@@ -247,8 +248,7 @@ function handleTasks() {
                 nextTick(handleSubTasks);
             });
         });
-    }
-    nextTick(handleSubTasks);
+    });
 }
 //
 //
