@@ -1,27 +1,28 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   background: #4CAF50;
   color: #ffffff;
   font-size: 14px;
   font-family: Tahoma, Helvetica, Arial, sans-serif;
+  margin: 8px;
+  --item-height: 16px;
+  --section-header-height: 30px;
 }
 
 p {
   display: flex;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
+a:link, a:visited, a:hover, a:active {
   color: LightBlue;
 }
 
 .content {
   width: 600px;
-  max-width: 100vw;
+  max-width: calc(100vw - 16px);
   margin: 0 auto;
 }
 
@@ -35,40 +36,65 @@ a:active {
   }
 }
 
-table {
-  width: 100%;
-  margin-top: 10px;
+section {
+  overflow: hidden;
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  top: 0;
+  position: relative;
+  --max-delay: 1;
+  transition: all ease 1s;
+  height: calc(var(--nums) * (var(--item-height) + 2px) + var(--section-header-height));
 }
 
-table caption {
-  text-align: left;
+h3 {
   font-size: 20px;
   font-weight: 900;
+  height: var(--section-header-height);
+  margin: 0;
+  padding: 0;
 }
 
-.item {
-  white-space: nowrap;
+section>div {
+  width: 100%;
+  position: absolute;
+  height: 16px;
+  margin: 1px 0;
+  transition: all ease .5s;
+  display: flex;
+  --delay: 0;
+  transform: translateY(calc(var(--index) * (var(--item-height) + 2px)));
+  z-index: calc(var(--nums) - var(--index) + 1);
+}
+
+section>div::after {
+  content: "";
+  position: absolute;
+  left: 70px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  --base-color: rgb(calc(var(--delay) / var(--max-delay) * 200), calc(255 - var(--delay) / var(--max-delay) * 128), 0);
+  --percent: calc(var(--delay) / var(--max-delay) * 100%);
+  background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent));
+  z-index: -1;
+  transition: all ease 1s;
 }
 
 .result {
-  width: 80px;
+  display: inline-block;
+  width: 70px;
   font-family: 'Lucida Console', Monaco, monospace;
   font-size: 12px;
+  text-align: right;
+  padding-right: .5em;
+}
+
+.name {
+  flex: 1;
 }
 
 img {
   position: absolute;
   opacity: 0;
-}
-
-.first {
-  background: BlueViolet;
-}
-
-.second {
-  background: DeepSkyBlue;
-}
-
-.last {
-  background: darkred;
 }

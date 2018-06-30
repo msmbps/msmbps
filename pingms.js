@@ -175,24 +175,25 @@ function prepare() {
         const key = pair[0];
         const array = pair[1];
         const subtasks = [];
-        const table = document.createElement("table");
-        table.appendChild(simpleElement("caption", key));
-        const tbody = document.createElement("tbody");
-        array.forEach(function (item) {
-            const bodyline = document.createElement("tr");
-            let result;
-            bodyline.appendChild(simpleElement("td", item.name));
-            bodyline.appendChild(result = simpleElement("td", "Pending..."));
+        const section = document.createElement("section");
+        section.appendChild(simpleElement("h3", key));
+        section.style.setProperty("--nums", array.length);
+        array.forEach(function (item, i) {
+            const bodyline = document.createElement("div");
+            let result, name;
+            bodyline.appendChild(result = simpleElement("span", "Pending"));
             result.className = "result";
-            tbody.appendChild(bodyline);
+            bodyline.appendChild(name = simpleElement("span", item.name));
+            name.className = "name";
+            section.appendChild(bodyline);
             subtasks.push({
                 line: bodyline,
                 url: item.url,
                 result: result
             });
+            bodyline.style.setProperty("--index", i);
         });
-        table.appendChild(tbody);
-        resultArea.appendChild(table);
+        resultArea.appendChild(section);
         tasks.push(subtasks);
     })
 }
@@ -200,7 +201,7 @@ function prepare() {
 //
 // Load image and set callback
 function loadImg(src, callback) {
-    img.src = src + "?res=" + Math.random();
+    img.src = src + Math.random();
     img.onerror = callback;
     img.onload = callback;
 }
@@ -208,18 +209,22 @@ function loadImg(src, callback) {
 //
 // Start Ping
 function handleTasks() {
-    if (tasks.length == 0) return;
+    if (tasks.length == 0) {
+        img.remove();
+        return;
+    }
     const currentSubTasks = tasks.shift();
     const subResults = [];
     let startTime = 0;
+    let maxDelay = 1;
     nextTick(function handleSubTasks() {
+        subResults.sort(function(a, b) {
+            return a.delay - b.delay;
+        });
+        subResults.forEach(function (key, index) {
+            key.line.style.setProperty("--index", index);
+        });
         if (currentSubTasks.length == 0) {
-            subResults.sort(function(a, b) {
-                return a.delay - b.delay;
-            });
-            subResults[0].line.className = "first";
-            subResults[1].line.className = "second";
-            subResults[subResults.length - 1].line.className = "last";
             return nextTick(handleTasks);
         }
         const task = currentSubTasks.shift();
@@ -228,22 +233,30 @@ function handleTasks() {
         loadImg(task.url, function() {
             startTime = new Date().getTime();
             let finished = false;
+            function updateDelay() {
+                const now = new Date().getTime();
+                const delay = now - startTime;
+                if (delay > maxDelay) {
+                    maxDelay = delay;
+                    task.line.parentElement.style.setProperty("--max-delay", delay);
+                }
+                task.result.textContent = (delay) + "ms";
+                task.line.style.setProperty("--delay", delay);
+                return delay;
+            }
             // Update delay realtime
             nextTick(function rev() {
                 if (!finished) {
-                    const now = new Date().getTime();
-                    task.result.textContent = (now - startTime) + "ms";
+                    updateDelay();
                     nextTick(rev);
                 }
             });
             // Second time to load image (measure latency)
             loadImg(task.url, function() {
                 finished = true;
-                const now = new Date().getTime();
-                task.result.textContent = (now - startTime) + "ms";
                 subResults.push({
                     line: task.line,
-                    delay: now - startTime
+                    delay: updateDelay()
                 });
                 nextTick(handleSubTasks);
             });
