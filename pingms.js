@@ -228,7 +228,7 @@ function handleTasks() {
             return nextTick(handleTasks);
         }
         const task = currentSubTasks.shift();
-        task.result.textContent = "Wait DNS";
+        task.result.textContent = "DNS";
         // First time to load image (skip DNS querying)
         loadImg(task.url, function() {
             startTime = new Date().getTime();
