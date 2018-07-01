@@ -142,9 +142,9 @@ section>div::after {
   /* "--percent" is replaced by "--percent-number" */
   /* background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent)); */
   /* "background: linear-gradient" is disabled for compatibility */
-  background:DarkOliveGreen;
+  background: DarkOliveGreen;
   --percent-number: calc(var(--delay) * 100 / var(--max-delay));
-  width:calc((100% - 70px) * var(--percent-number) / 100);
+  width: calc((100% - 85px) * var(--percent-number) / 100);
   /* ***** */
   /* ***** */
   /* ***** */
