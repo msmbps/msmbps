@@ -1,5 +1,7 @@
 # PING ms
 
+[@pingms](https://github.com/pingms) founded this project. [@codehz](https://github.com/codehz) greatly improved it.
+
 ![](https://raw.githubusercontent.com/pingms/pingms/master/Image-TwoRequestsForEachServer.png "")
 
 ![](https://raw.githubusercontent.com/pingms/pingms/master/Image-ResultsArePrecise.png "")
