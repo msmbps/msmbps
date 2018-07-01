@@ -138,11 +138,13 @@ section>div::after {
   /* ***** */
   /* --base-color: rgb(calc(var(--delay) / var(--max-delay) * 200), calc(255 - var(--delay) / var(--max-delay) * 128), 0); */
   /* "--base-color" is disabled for compatibility */
-  --percent: calc(var(--delay) / var(--max-delay) * 100%);
+  /* --percent: calc(var(--delay) / var(--max-delay) * 100%); */
+  /* "--percent" is replaced by "--percent-number" */
   /* background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent)); */
   /* "background: linear-gradient" is disabled for compatibility */
   background:DarkOliveGreen;
-  width:calc(var(--percent));
+  --percent-number: calc(var(--delay) * 100 / var(--max-delay));
+  width:calc((100% - 70px) * var(--percent-number) / 100);
   /* ***** */
   /* ***** */
   /* ***** */
