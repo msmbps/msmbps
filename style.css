@@ -1,5 +1,23 @@
+/*
+ *
+ *
+ * CSS code of "PING ms"
+ * The full project is at https://github.com/pingms/pingms
+ *
+ * @pingms founded the project.
+ * @codehz greatly improved it.
+ * @pingms improved its compatibility.
+ * @pingms fixed the bug of horizontal scrollbar(if browser width is not enough)
+ *
+ * (@pingms - https://github.com/pingms)
+ * (@codehz - https://github.com/codehz)
+ *
+ *
+ *
+ */
 * {
   box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
 }
 
 body {
@@ -10,10 +28,13 @@ body {
   margin: 8px;
   --item-height: 16px;
   --section-header-height: 30px;
+  /* Double leading dash is used for defining custom properties */
 }
 
 p {
   display: flex;
+  /* This defines a flex container */
+  /* It enables a flex context for all its direct children */
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -21,9 +42,25 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .content {
-  width: 600px;
+  /* ***** */
+  /* ***** */
+  /* ***** */
+  /* width: 600px; */
+  /* "width: 600px;" is disabled */
+  /* because it can cause horizontal scrollbar  */
+  /* if browser width is not enough */
+  width: 95%;
+  /* If it's in the mode of "two columns" */
+  /* ".content" width will be changed by "@media (min-width: 800px)"*/
+  /* ***** */
+  /* ***** */
+  /* ***** */
   max-width: calc(100vw - 16px);
+  /* calc() function performs a calculation to be used as the property value */
+  /* vw: 1/100th viewport width */
   margin: 0 auto;
+  /* The first parameter 0 indicates that the top and bottom margins will both be set to 0 */
+  /* The left and right margins will be set to the same size */
 }
 
 @media (min-width: 800px) {
@@ -34,16 +71,31 @@ a:link, a:visited, a:hover, a:active {
     column-rule-width: 1px;
     column-rule-color: white;
   }
+  /* ***** */
+  /* ***** */
+  /* ***** */
+  .content {
+    width: 600px;
+  }
+  /* In the mode of "two columns", set ".content" width */
+  /* ***** */
+  /* ***** */
+  /* ***** */
 }
 
 section {
   overflow: hidden;
   break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
+  /* Avoids any break (page, column, or region) from being inserted within the principal box */
   top: 0;
   position: relative;
   --max-delay: 1;
   transition: all ease 1s;
+  /* CSS transitions allows you to change property values smoothly */
+  /* (from one value to another), over a given duration */
+  /* all - specified for the transition-property */
+  /* ease - specifies a transition effect with a slow start, then fast, then end slowly */
   height: calc(var(--nums) * (var(--item-height) + 2px) + var(--section-header-height));
 }
 
@@ -64,19 +116,36 @@ section>div {
   display: flex;
   --delay: 0;
   transform: translateY(calc(var(--index) * (var(--item-height) + 2px)));
+  /* The translateY() CSS function repositions an element vertically on the 2D plane */
   z-index: calc(var(--nums) - var(--index) + 1);
 }
 
 section>div::after {
+  /* > */
+  /* The selector "div > p.some_class" only selects paragraphs of */
+  /* ".some_class" that are nested directly inside a div */
+  /* and not any paragraphs that are nested further within. */
+  /* ::after */
+  /* Insert content after every element, and style the inserted content */
   content: "";
   position: absolute;
   left: 70px;
   right: 0;
   top: 0;
   bottom: 0;
-  --base-color: rgb(calc(var(--delay) / var(--max-delay) * 200), calc(255 - var(--delay) / var(--max-delay) * 128), 0);
+  /* ***** */
+  /* ***** */
+  /* ***** */
+  /* --base-color: rgb(calc(var(--delay) / var(--max-delay) * 200), calc(255 - var(--delay) / var(--max-delay) * 128), 0); */
+  /* "--base-color" is disabled for compatibility */
   --percent: calc(var(--delay) / var(--max-delay) * 100%);
-  background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent));
+  /* background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent)); */
+  /* "background: linear-gradient" is disabled for compatibility */
+  background:DarkOliveGreen;
+  width:calc(var(--percent));
+  /* ***** */
+  /* ***** */
+  /* ***** */
   z-index: -1;
   transition: all ease 1s;
 }
@@ -92,9 +161,18 @@ section>div::after {
 
 .name {
   flex: 1;
+  /* Let all the flexible items be the same length, regardless of its content */
 }
 
 img {
   position: absolute;
   opacity: 0;
 }
+/*
+ *
+ *
+ * END OF FILE
+ * The full project is at https://github.com/pingms/pingms
+ *
+ *
+ */
