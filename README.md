@@ -1,11 +1,12 @@
 # PING ms
 
-[@pingms](https://github.com/pingms) founded this project. [@codehz](https://github.com/codehz) greatly improved it.
+## Authors
+* [@pingms](https://github.com/pingms) founded this project.
+* [@codehz](https://github.com/codehz) greatly improved it.
+* [@pingms](https://github.com/pingms) fixed the jitter problem.
 
-![](https://raw.githubusercontent.com/pingms/pingms/master/Image-TwoRequestsForEachServer.png "")
+## Internal
+![](https://raw.githubusercontent.com/pingms/pingms/master/Image-Precise.png "")
 
-![](https://raw.githubusercontent.com/pingms/pingms/master/Image-ResultsArePrecise.png "")
-
-![](https://raw.githubusercontent.com/pingms/pingms/master/Image-AtlantaTest.png "")
-
+## Web
 [http://www.pingms.com/](http://www.pingms.com/)
