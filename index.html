@@ -1,24 +1,42 @@
+<!--
+ !
+ !
+ ! HTML code of "PING ms"
+ ! The full project is at https://github.com/pingms/pingms
+ !
+ ! @pingms founded the project.
+ ! @codehz greatly improved it.
+ !
+ ! (@pingms - https://github.com/pingms)
+ ! (@codehz - https://github.com/codehz)
+ !
+ !
+ !-->
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>PING ms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="targets.js"></script>
   <script src="pingms.js"></script>
 </head>
-
 <body onload="main()">
   <div class="content">
     <h2>PING ms</h2>
-    <p>Get milliseconds(ms) of HTTP ping, from browser, to cloud, excluding DNS latency</p>
+    <p>Get milliseconds(ms) of HTTP ping, from browser, to cloud, excluding DNS latency, without jitter. Five HTTP requests for each server: the initial request is for caching DNS, and result is the minimum time of the next four requests, avoiding jitter from network and JavaScript.</p>
     <div id="result">
     </div>
-    <p>
-      <a href="https://github.com/pingms/pingms">Source code and documentation at GitHub</a>
-    </p>
+    <p><a href="https://github.com/pingms/pingms">Source code and documentation at GitHub</a></p>
   </div>
 </body>
-
 </html>
+<!--
+ !
+ !
+ ! END OF FILE
+ ! The full project is at https://github.com/pingms/pingms
+ !
+ !
+ !-->

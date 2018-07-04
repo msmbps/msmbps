@@ -6,7 +6,7 @@
 //
 // @pingms founded the project.
 // @codehz greatly improved it.
-// @pingms is working on it.
+// @pingms fixed the jitter problem(with several HTTP pings).
 //
 // (@pingms - https://github.com/pingms)
 // (@codehz - https://github.com/codehz)
@@ -21,160 +21,7 @@
 // more robust, readable, and accurate.
 //
 //
-// Data of target servers
-// const: Constants are block-scoped,
-// much like variables defined using the let statement.
-// The value of a constant cannot change through re-assignment,
-// and it can't be redeclared.
-const data = {
-    Vultr: [{
-        name: "Frankfurt",
-        url: "http://fra-de-ping.vultr.com/"
-    }, {
-        name: "Amsterdam",
-        url: "http://ams-nl-ping.vultr.com/"
-    }, {
-        name: "Paris",
-        url: "http://par-fr-ping.vultr.com/"
-    }, {
-        name: "London",
-        url: "http://lon-gb-ping.vultr.com/"
-    }, {
-        name: "Singapore",
-        url: "http://sgp-ping.vultr.com/"
-    }, {
-        name: "Tokyo",
-        url: "http://hnd-jp-ping.vultr.com/"
-    }, {
-        name: "New Jersey",
-        url: "http://nj-us-ping.vultr.com/"
-    }, {
-        name: "Chicago",
-        url: "http://il-us-ping.vultr.com/"
-    }, {
-        name: "Seattle",
-        url: "http://wa-us-ping.vultr.com/"
-    }, {
-        name: "Atlanta",
-        url: "http://ga-us-ping.vultr.com/"
-    }, {
-        name: "Miami",
-        url: "http://fl-us-ping.vultr.com/"
-    }, {
-        name: "Dallas",
-        url: "http://tx-us-ping.vultr.com/"
-    }, {
-        name: "Silicon Valley",
-        url: "http://sjo-ca-us-ping.vultr.com/"
-    }, {
-        name: "Los Angeles",
-        url: "http://lax-ca-us-ping.vultr.com/"
-    }, {
-        name: "Sydney",
-        url: "http://syd-au-ping.vultr.com/"
-    }],
-    Linode: [{
-        name: "Newark",
-        url: "http://speedtest.newark.linode.com/"
-    }, {
-        name: "Atlanta",
-        url: "http://speedtest.atlanta.linode.com/"
-    }, {
-        name: "Dallas",
-        url: "http://speedtest.dallas.linode.com/"
-    }, {
-        name: "Fremont",
-        url: "http://speedtest.fremont.linode.com/"
-    }, {
-        name: "Frankfurt",
-        url: "http://speedtest.frankfurt.linode.com/"
-    }, {
-        name: "London",
-        url: "http://speedtest.london.linode.com/"
-    }, {
-        name: "Singapore",
-        url: "http://speedtest.singapore.linode.com/"
-    }, {
-        name: "Tokyo 2",
-        url: "http://speedtest.tokyo2.linode.com/"
-    }],
-    DigitalOcean: [{
-        name: "NYC1",
-        url: "http://speedtest-nyc1.digitalocean.com/"
-    }, {
-        name: "NYC2",
-        url: "http://speedtest-nyc2.digitalocean.com/"
-    }, {
-        name: "NYC3",
-        url: "http://speedtest-nyc3.digitalocean.com/"
-    }, {
-        name: "AMS2",
-        url: "http://speedtest-ams2.digitalocean.com/"
-    }, {
-        name: "AMS3",
-        url: "http://speedtest-ams3.digitalocean.com/"
-    }, {
-        name: "SFO1",
-        url: "http://speedtest-sfo1.digitalocean.com/"
-    }, {
-        name: "SFO2",
-        url: "http://speedtest-sfo2.digitalocean.com/"
-    }, {
-        name: "SGP1",
-        url: "http://speedtest-sgp1.digitalocean.com/"
-    }, {
-        name: "LON1",
-        url: "http://speedtest-lon1.digitalocean.com/"
-    }, {
-        name: "FRA1",
-        url: "http://speedtest-fra1.digitalocean.com/"
-    }, {
-        name: "TOR1",
-        url: "http://speedtest-tor1.digitalocean.com/"
-    }, {
-        name: "BLR1",
-        url: "http://speedtest-blr1.digitalocean.com/"
-    }],
-    VirMach: [{
-        name: "Frankfurt",
-        url: "http://ffm.lg.virmach.com/"
-    }, {
-        name: "Amsterdam",
-        url: "http://ams.lg.virmach.com/"
-    }, {
-        name: "Buffalo",
-        url: "http://ny.lg.virmach.com/"
-    }, {
-        name: "Piscataway (NYC)",
-        url: "http://nj.lg.virmach.com/"
-    }, {
-        name: "Dallas",
-        url: "http://dal.lg.virmach.com/"
-    }, {
-        name: "Phoenix",
-        url: "http://phx.lg.virmach.com/"
-    }, {
-        name: "Los Angeles",
-        url: "http://la.lg.virmach.com/"
-    }, {
-        name: "DDoS-Protected Los Angeles",
-        url: "http://filtered-la.lg.virmach.com/"
-    }, {
-        name: "Chicago",
-        url: "http://chi.lg.virmach.com/"
-    }, {
-        name: "Seattle",
-        url: "http://sea.lg.virmach.com/"
-    }, {
-        name: "Atlanta",
-        url: "http://atl.lg.virmach.com/"
-    }, {
-        name: "San Jose",
-        url: "http://sj.lg.virmach.com/"
-    }]
-};
-//
-//
+// ***** Global Variables *****
 // The let statement declares a block scope local variable,
 // optionally initializing it to a value.
 let nextTick = window.requestAnimationFrame || window.setTimeout
@@ -184,9 +31,14 @@ let nextTick = window.requestAnimationFrame || window.setTimeout
 // that the browser call a specified function
 // to update an animation before the next repaint.
 //
-//
-let tasks = [] // Pending task
-let img = document.createElement("img") // Image for test
+let tasks = [] // All cloud providers - "task" is a cloud provider
+let task = null; // Current cloud provider - "task" is a cloud provider
+let currentSubTasks = null; // Current locations - "SubTask" is a location of cloud provider
+let currentSubResults = []; // Results of current locations - "SubTask" is a location of cloud provider
+let startTime = 0; // The start time of current test - a "test" is loading URL
+let maxDelay = 0; // Max delay of a cloud provider
+let img = document.createElement("img") // IMG object for tests
+// ***** ***** *****
 //
 //
 // Prepare to run tests
@@ -235,15 +87,17 @@ function prepare() {
         //
             const bodyline = document.createElement("div");
             let result, name;
-            bodyline.appendChild(result = simpleElement("span", "Pending"));
+            bodyline.appendChild(result = simpleElement("span", "..."));
             result.className = "result";
             bodyline.appendChild(name = simpleElement("span", item.name));
             name.className = "name";
             section.appendChild(bodyline);
             subtasks.push({
-                line: bodyline,
-                url: item.url,
-                result: result
+                line: bodyline, // "DIV" object of item
+                url: item.url,  // URL of this location
+                result: result, // "SPAN" object of result
+                min: 60000,     // Min of several HTTP pings
+                count: 0        // The number of finished tests(including DNS caching)
             });
             bodyline.style.setProperty("--index", i);
             // Index of this target server
@@ -267,11 +121,72 @@ function loadImg(src, callback) {
     // (the size of page does not change much)
     //
     img.onerror = callback;
-    img.onload = callback;
 }
 //
 //
-// Start Ping
+// Do a test
+function handleOneTest()
+{
+    // Get min of HTTP pings
+    // (skip the first HTTP ping - it's just caching DNS)
+    if(task.count>1) {
+        const now = new Date().getTime();
+        const delay = now - startTime;
+        if(delay<task.min) {
+            task.min=delay;
+        }
+    }
+    // Five HTTP pings are done
+    if(task.count==5) {
+        // Update the max value of cloud provider
+        if (task.min > maxDelay) {
+            maxDelay = task.min;
+            task.line.parentElement.style.setProperty("--max-delay", maxDelay);
+        }
+        task.result.textContent = (task.min) + "ms";
+        task.line.style.setProperty("--delay", task.min);
+        currentSubResults.push({
+            line: task.line,
+            delay: task.min
+        });
+        // Go to the next "SubTask"(a location of cloud provider)
+        nextTick(handleSubTasks);
+        return;
+    }
+    // Ping this location
+    task.count++;
+    task.result.textContent = (task.count) + "/5";
+    startTime = new Date().getTime();
+    loadImg(task.url, handleOneTest);
+}
+//
+//
+// Do a "SubTask"(a location of cloud provider)
+function handleSubTasks() {
+    currentSubResults.sort(function(a, b) {
+        return a.delay - b.delay;
+    });
+    // Sort an array descending:
+    // var points = [40, 100, 1, 5, 25, 10];
+    // points.sort(function(a, b){return b - a});
+    //
+    currentSubResults.forEach(function (key, index) {
+        key.line.style.setProperty("--index", index);
+    });
+    // Update "--index" after "sort"
+    //
+    if (currentSubTasks.length == 0) {
+        return nextTick(handleTasks);
+    }
+    task = currentSubTasks.shift();
+    task.result.textContent = "1/5";
+    task.count=1;
+    // First time to load image (for caching DNS)
+    loadImg(task.url, handleOneTest);
+}
+//
+//
+// Do a "Task"(a cloud provider)
 function handleTasks() {
     if (tasks.length == 0) {
         img.remove();
@@ -280,78 +195,13 @@ function handleTasks() {
         //
         return;
     }
-    const currentSubTasks = tasks.shift();
+    currentSubTasks = tasks.shift();
+    currentSubResults = [];
     // The shift() method removes the first element
     // from an array and returns that removed element.
     //
-    const subResults = [];
-    let startTime = 0;
-    let maxDelay = 1;
-    nextTick(function handleSubTasks() {
-        subResults.sort(function(a, b) {
-            return a.delay - b.delay;
-        });
-        // Sort an array descending:
-        // var points = [40, 100, 1, 5, 25, 10];
-        // points.sort(function(a, b){return b - a});
-        //
-        subResults.forEach(function (key, index) {
-            key.line.style.setProperty("--index", index);
-        });
-        // Update "--index" after "sort"
-        //
-        if (currentSubTasks.length == 0) {
-            return nextTick(handleTasks);
-        }
-        const task = currentSubTasks.shift();
-        task.result.textContent = "DNS";
-        //
-        // *****
-        // *****
-        // First time to load image (for caching DNS)
-        loadImg(task.url, function() {
-            // When this function is called,
-            // The first IMG loading is done.
-            startTime = new Date().getTime();
-            let finished = false;
-            //
-            // *****
-            function updateDelay() {
-                const now = new Date().getTime();
-                const delay = now - startTime;
-                if (delay > maxDelay) {
-                    maxDelay = delay;
-                    task.line.parentElement.style.setProperty("--max-delay", delay);
-                }
-                task.result.textContent = (delay) + "ms";
-                task.line.style.setProperty("--delay", delay);
-                return delay;
-            }
-            // *****
-            //
-            // Update delay realtime
-            nextTick(function rev() {
-                if (!finished) {
-                    updateDelay();
-                    nextTick(rev);
-                }
-            });
-            // Second time to load image (measure latency)
-            loadImg(task.url, function() {
-                // When this function is called,
-                // the second IMG loading is done.
-                finished = true;
-                subResults.push({
-                    line: task.line,
-                    delay: updateDelay()
-                });
-                nextTick(handleSubTasks);
-            });
-        });
-        // *****
-        // *****
-        //
-    });
+    maxDelay=0; // Reset the max delay of this cloud provider.
+    nextTick(handleSubTasks);
 }
 //
 //

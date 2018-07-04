@@ -42,9 +42,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .content {
-  /* ***** */
-  /* ***** */
-  /* ***** */
   /* width: 600px; */
   /* "width: 600px;" is disabled */
   /* because it can cause horizontal scrollbar  */
@@ -52,9 +49,6 @@ a:link, a:visited, a:hover, a:active {
   width: 95%;
   /* If it's in the mode of "two columns" */
   /* ".content" width will be changed by "@media (min-width: 800px)"*/
-  /* ***** */
-  /* ***** */
-  /* ***** */
   max-width: calc(100vw - 16px);
   /* calc() function performs a calculation to be used as the property value */
   /* vw: 1/100th viewport width */
@@ -66,21 +60,22 @@ a:link, a:visited, a:hover, a:active {
 @media (min-width: 800px) {
   #result {
     column-count: 2;
+    /* The column-count property specifies */
+    /* the number of columns an element should be divided into */
     column-gap: 20px;
+    /* The column-gap property specifies the gap between the columns. */
     column-rule-style: solid;
+    /* Specify the style of the rule between columns */
     column-rule-width: 1px;
+    /* The column-rule-width property specifies */
+    /* the width of the rule between columns. */
     column-rule-color: white;
+    /* Specify the color of the rule between columns */
   }
-  /* ***** */
-  /* ***** */
-  /* ***** */
   .content {
     width: 600px;
   }
   /* In the mode of "two columns", set ".content" width */
-  /* ***** */
-  /* ***** */
-  /* ***** */
 }
 
 section {
@@ -108,6 +103,10 @@ h3 {
 }
 
 section>div {
+  /* > */
+  /* The selector "div > p.some_class" only selects paragraphs of */
+  /* ".some_class" that are nested directly inside a div */
+  /* and not any paragraphs that are nested further within. */
   width: 100%;
   position: absolute;
   height: 16px;
@@ -121,21 +120,14 @@ section>div {
 }
 
 section>div::after {
-  /* > */
-  /* The selector "div > p.some_class" only selects paragraphs of */
-  /* ".some_class" that are nested directly inside a div */
-  /* and not any paragraphs that are nested further within. */
   /* ::after */
   /* Insert content after every element, and style the inserted content */
   content: "";
   position: absolute;
-  left: 70px;
+  left: 55px;
   right: 0;
   top: 0;
   bottom: 0;
-  /* ***** */
-  /* ***** */
-  /* ***** */
   /* --base-color: rgb(calc(var(--delay) / var(--max-delay) * 200), calc(255 - var(--delay) / var(--max-delay) * 128), 0); */
   /* "--base-color" is disabled for compatibility */
   /* --percent: calc(var(--delay) / var(--max-delay) * 100%); */
@@ -145,16 +137,13 @@ section>div::after {
   background: DarkOliveGreen;
   --percent-number: calc(var(--delay) * 100 / var(--max-delay));
   width: calc((100% - 85px) * var(--percent-number) / 100);
-  /* ***** */
-  /* ***** */
-  /* ***** */
   z-index: -1;
   transition: all ease 1s;
 }
 
 .result {
   display: inline-block;
-  width: 70px;
+  width: 55px;
   font-family: 'Lucida Console', Monaco, monospace;
   font-size: 12px;
   text-align: right;
