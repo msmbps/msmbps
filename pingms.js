@@ -1,14 +1,31 @@
 //
 //
-// JavaScript code of HTTP ping.
+//
+// JavaScript code of "PING ms"
 // The full project is at https://github.com/pingms/pingms
+//
+// @pingms founded the project.
+// @codehz greatly improved it.
+// @pingms is working on it.
+//
+// (@pingms - https://github.com/pingms)
+// (@codehz - https://github.com/codehz)
+//
 //
 //
 "use strict"
-
+// JS is evaluated in strict mode.
+// Strict mode throws more errors
+// and disables some features
+// in an effort to make your code
+// more robust, readable, and accurate.
 //
 //
-// Test Data
+// Data of target servers
+// const: Constants are block-scoped,
+// much like variables defined using the let statement.
+// The value of a constant cannot change through re-assignment,
+// and it can't be redeclared.
 const data = {
     Vultr: [{
         name: "Frankfurt",
@@ -156,8 +173,18 @@ const data = {
         url: "http://sj.lg.virmach.com/"
     }]
 };
-
-let nextTick = window.requestAnimationFrame || window.setTimeout // The delay function
+//
+//
+// The let statement declares a block scope local variable,
+// optionally initializing it to a value.
+let nextTick = window.requestAnimationFrame || window.setTimeout
+// The delay function
+// The window.requestAnimationFrame() method tells the browser
+// that you wish to perform an animation and requests
+// that the browser call a specified function
+// to update an animation before the next repaint.
+//
+//
 let tasks = [] // Pending task
 let img = document.createElement("img") // Image for test
 //
@@ -165,20 +192,47 @@ let img = document.createElement("img") // Image for test
 // Prepare to run tests
 function prepare() {
     const resultArea = document.querySelector("#result");
+    // The Document method querySelector() returns the first Element
+    // within the document that matches the specified selector
     resultArea.appendChild(img);
+    // *****
     function simpleElement(tag, text) {
         const el = document.createElement(tag);
         el.textContent = text;
         return el;
     }
+    // *****
     Object.entries(data).forEach(function (pair) {
+        // Object.entries...
+        // const object2 = { 0: 'a', 1: 'b', 2: 'c' };
+        // console.log(Object.entries(object2)[2]);
+        // expected output: Array ["2", "c"]
+        //
+        // forEach...
+        // var array1 = ['a', 'b', 'c'];
+        // array1.forEach(function(element) {
+        // console.log(element);
+        // });
+        // expected output: "a"
+        // expected output: "b"
+        // expected output: "c"
+        //
         const key = pair[0];
         const array = pair[1];
         const subtasks = [];
         const section = document.createElement("section");
+        // <section> means that the content inside is grouped
+        //
         section.appendChild(simpleElement("h3", key));
         section.style.setProperty("--nums", array.length);
+        // Total number of target servers of this cloud service.
+        //
         array.forEach(function (item, i) {
+        // The following code logs a line for each element in an array:
+        // function logArrayElements(element, index, array) {
+        //     console.log('a[' + index + '] = ' + element);
+        // }
+        //
             const bodyline = document.createElement("div");
             let result, name;
             bodyline.appendChild(result = simpleElement("span", "Pending"));
@@ -192,9 +246,15 @@ function prepare() {
                 result: result
             });
             bodyline.style.setProperty("--index", i);
+            // Index of this target server
+            //
         });
         resultArea.appendChild(section);
         tasks.push(subtasks);
+        // The push() method adds one or more elements
+        // to the end of an array
+        // and returns the new length of the array.
+        //
     })
 }
 //
@@ -202,6 +262,10 @@ function prepare() {
 // Load image and set callback
 function loadImg(src, callback) {
     img.src = src + Math.random();
+    // This URL is never cached,
+    // and it's "404 Not Found"
+    // (the size of page does not change much)
+    //
     img.onerror = callback;
     img.onload = callback;
 }
@@ -211,9 +275,15 @@ function loadImg(src, callback) {
 function handleTasks() {
     if (tasks.length == 0) {
         img.remove();
+        // The ChildNode.remove() method removes
+        // the object from the tree it belongs to.
+        //
         return;
     }
     const currentSubTasks = tasks.shift();
+    // The shift() method removes the first element
+    // from an array and returns that removed element.
+    //
     const subResults = [];
     let startTime = 0;
     let maxDelay = 1;
@@ -221,18 +291,31 @@ function handleTasks() {
         subResults.sort(function(a, b) {
             return a.delay - b.delay;
         });
+        // Sort an array descending:
+        // var points = [40, 100, 1, 5, 25, 10];
+        // points.sort(function(a, b){return b - a});
+        //
         subResults.forEach(function (key, index) {
             key.line.style.setProperty("--index", index);
         });
+        // Update "--index" after "sort"
+        //
         if (currentSubTasks.length == 0) {
             return nextTick(handleTasks);
         }
         const task = currentSubTasks.shift();
         task.result.textContent = "DNS";
-        // First time to load image (skip DNS querying)
+        //
+        // *****
+        // *****
+        // First time to load image (for caching DNS)
         loadImg(task.url, function() {
+            // When this function is called,
+            // The first IMG loading is done.
             startTime = new Date().getTime();
             let finished = false;
+            //
+            // *****
             function updateDelay() {
                 const now = new Date().getTime();
                 const delay = now - startTime;
@@ -244,6 +327,8 @@ function handleTasks() {
                 task.line.style.setProperty("--delay", delay);
                 return delay;
             }
+            // *****
+            //
             // Update delay realtime
             nextTick(function rev() {
                 if (!finished) {
@@ -253,6 +338,8 @@ function handleTasks() {
             });
             // Second time to load image (measure latency)
             loadImg(task.url, function() {
+                // When this function is called,
+                // the second IMG loading is done.
                 finished = true;
                 subResults.push({
                     line: task.line,
@@ -261,6 +348,9 @@ function handleTasks() {
                 nextTick(handleSubTasks);
             });
         });
+        // *****
+        // *****
+        //
     });
 }
 //
@@ -272,7 +362,9 @@ function main() {
 }
 //
 //
+//
 // END OF FILE
 // The full project is at https://github.com/pingms/pingms
+//
 //
 //
