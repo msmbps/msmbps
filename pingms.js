@@ -32,7 +32,7 @@ let nextTick = window.requestAnimationFrame || window.setTimeout
 // to update an animation before the next repaint.
 //
 let tasks = [] // All cloud providers - "task" is a cloud provider
-let task = null; // Current cloud provider - "task" is a cloud provider
+let task = null; // Current "SubTask" - "SubTask" is a location of cloud provider
 let currentSubTasks = null; // Current locations - "SubTask" is a location of cloud provider
 let currentSubResults = []; // Results of current locations - "SubTask" is a location of cloud provider
 let startTime = 0; // The start time of current test - a "test" is loading URL
