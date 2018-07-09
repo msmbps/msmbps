@@ -7,6 +7,7 @@
 // @pingms founded the project.
 // @codehz greatly improved it.
 // @pingms fixed the jitter problem(with several HTTP pings).
+// @pingms added "Test Download".
 //
 // (@pingms - https://github.com/pingms)
 // (@codehz - https://github.com/codehz)
@@ -37,8 +38,30 @@ let currentSubTasks = null; // Current locations - "SubTask" is a location of cl
 let currentSubResults = []; // Results of current locations - "SubTask" is a location of cloud provider
 let startTime = 0; // The start time of current test - a "test" is loading URL
 let maxDelay = 0; // Max delay of a cloud provider
-let img = document.createElement("img") // IMG object for tests
+let img = document.createElement("img"); // IMG object for tests
+let allDone = false; // Whether all have been finished
 // ***** ***** *****
+//
+//
+// "onclick" event of names
+function nameOnClick()
+{
+    if((!allDone)&&(document.querySelector('.message')==null)) {
+        let message = document.createElement("div");
+        message.className = "message";
+        message.innerHTML = "During download, ping might not be precise.<br><br><br>"+
+                            "<div style='inline-block;text-align:center;'>"+
+                            "<a href='javascript:void(0);' onclick='location.reload();void(0);'>Reload</a>"+
+                            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                            "<a href='javascript:void(0);' onclick='this.parentElement.parentElement.remove();void(0);'>Close</a>"+
+                            "</div>";
+        document.body.appendChild(message);
+    }
+    //
+    // Launch download
+    let downloadURL = this.getAttribute("download");
+    window.open(downloadURL, "_blank");
+}
 //
 //
 // Prepare to run tests
@@ -86,11 +109,13 @@ function prepare() {
         // }
         //
             const bodyline = document.createElement("div");
-            let result, name;
+            let result, name, tip;
             bodyline.appendChild(result = simpleElement("span", "..."));
             result.className = "result";
             bodyline.appendChild(name = simpleElement("span", item.name));
             name.className = "name";
+            name.appendChild(tip = simpleElement("span", "Test Download"));
+            tip.className = "tip";
             section.appendChild(bodyline);
             subtasks.push({
                 line: bodyline, // "DIV" object of item
@@ -100,6 +125,9 @@ function prepare() {
                 count: 0        // The number of finished tests(including DNS caching)
             });
             bodyline.style.setProperty("--index", i);
+            name.setAttribute("download", item.download);
+            name.style.cursor="pointer";
+            name.onclick=nameOnClick;
             // Index of this target server
             //
         });
@@ -193,6 +221,7 @@ function handleTasks() {
         // The ChildNode.remove() method removes
         // the object from the tree it belongs to.
         //
+        allDone = true;
         return;
     }
     currentSubTasks = tasks.shift();

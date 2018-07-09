@@ -8,6 +8,7 @@
  * @codehz greatly improved it.
  * @pingms improved its compatibility.
  * @pingms fixed the bug of horizontal scrollbar(if browser width is not enough)
+ * @pingms added "Test Download".
  *
  * (@pingms - https://github.com/pingms)
  * (@codehz - https://github.com/codehz)
@@ -15,6 +16,7 @@
  *
  *
  */
+
 * {
   box-sizing: border-box;
   /* Include padding and border in the element's total width and height */
@@ -26,9 +28,11 @@ body {
   font-size: 14px;
   font-family: Tahoma, Helvetica, Arial, sans-serif;
   margin: 8px;
-  --item-height: 16px;
+  --item-height: 18px;
   --section-header-height: 30px;
   /* Double leading dash is used for defining custom properties */
+  padding: 10px 0px 10px 0px;
+  margin: 0px;
 }
 
 p {
@@ -55,27 +59,6 @@ a:link, a:visited, a:hover, a:active {
   margin: 0 auto;
   /* The first parameter 0 indicates that the top and bottom margins will both be set to 0 */
   /* The left and right margins will be set to the same size */
-}
-
-@media (min-width: 800px) {
-  #result {
-    column-count: 2;
-    /* The column-count property specifies */
-    /* the number of columns an element should be divided into */
-    column-gap: 20px;
-    /* The column-gap property specifies the gap between the columns. */
-    column-rule-style: solid;
-    /* Specify the style of the rule between columns */
-    column-rule-width: 1px;
-    /* The column-rule-width property specifies */
-    /* the width of the rule between columns. */
-    column-rule-color: white;
-    /* Specify the color of the rule between columns */
-  }
-  .content {
-    width: 600px;
-  }
-  /* In the mode of "two columns", set ".content" width */
 }
 
 section {
@@ -109,7 +92,7 @@ section>div {
   /* and not any paragraphs that are nested further within. */
   width: 100%;
   position: absolute;
-  height: 16px;
+  height: calc(var(--item-height));
   margin: 1px 0;
   transition: all ease .5s;
   display: flex;
@@ -117,6 +100,7 @@ section>div {
   transform: translateY(calc(var(--index) * (var(--item-height) + 2px)));
   /* The translateY() CSS function repositions an element vertically on the 2D plane */
   z-index: calc(var(--nums) - var(--index) + 1);
+  padding-left: 3px;
 }
 
 section>div::after {
@@ -139,6 +123,8 @@ section>div::after {
   width: calc((100% - 85px) * var(--percent-number) / 100);
   z-index: -1;
   transition: all ease 1s;
+  height: calc(var(--item-height));
+  display: inline-block;
 }
 
 .result {
@@ -151,14 +137,126 @@ section>div::after {
 }
 
 .name {
-  flex: 1;
+  /* flex: 1; */
   /* Let all the flexible items be the same length, regardless of its content */
+  /* "flex: 1" is disabled */
+  display: inline-block;
+  height: calc(var(--item-height));
+  vertical-align: middle;
+  line-height: calc(var(--item-height));
+}
+
+.tip {
+  position: absolute;
+  z-index: 100;
+  width: 120px;
+  left: 0px;
+  opacity: 0.2;
+  visibility: hidden;
+  background-color: SeaGreen;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  display: inline-block;
+  height: calc(var(--item-height));
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+
+.name:hover .tip {
+  animation: tipAnimation 5s ease forwards;
+}
+
+.name:hover {
+  font-weight: bold;
+  font-style: italic;
+}
+
+@keyframes tipAnimation {
+  10% {
+    visibility: visible;
+    left: calc(100% - 120px);
+    opacity:1;
+  }
+  60% {
+    visibility: visible;
+    left: calc(100% - 120px);
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    left: calc(100% - 120px);
+    opacity: 0;
+  }
+}
+
+.usage {
+  font-style: italic;
 }
 
 img {
   position: absolute;
   opacity: 0;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  font-size: 26px;
+  font-weight: bold;
+  vertical-align: top;
+  padding: 8px 0 0 0;
+}
+
+.introduction {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+
+.message {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  width: 200px;
+  margin-top: 0px;
+  margin-left: -100px;
+  background-color: DarkGreen;
+  color: white;
+  z-index: 10000;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 0px 0px 25px 25px;
+}
+
+@media (min-width: 800px) {
+  #result {
+    column-count: 2;
+    /* The column-count property specifies */
+    /* the number of columns an element should be divided into */
+    column-gap: 20px;
+    /* The column-gap property specifies the gap between the columns. */
+    column-rule-style: solid;
+    /* Specify the style of the rule between columns */
+    column-rule-width: 1px;
+    /* The column-rule-width property specifies */
+    /* the width of the rule between columns. */
+    column-rule-color: white;
+    /* Specify the color of the rule between columns */
+  }
+  .content {
+    width: 600px;
+  }
+  /* In the mode of "two columns", set ".content" width */
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 /*
  *
  *
