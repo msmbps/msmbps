@@ -7,6 +7,7 @@
 // @pingms founded the project.
 // @codehz greatly improved it.
 // @pingms fixed the jitter problem(with several HTTP pings).
+// @pingms added "Test Download".
 //
 // (@pingms - https://github.com/pingms)
 // (@codehz - https://github.com/codehz)

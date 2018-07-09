@@ -8,6 +8,7 @@
  * @codehz greatly improved it.
  * @pingms improved its compatibility.
  * @pingms fixed the bug of horizontal scrollbar(if browser width is not enough)
+ * @pingms added "Test Download".
  *
  * (@pingms - https://github.com/pingms)
  * (@codehz - https://github.com/codehz)
@@ -122,7 +123,6 @@ section>div::after {
   width: calc((100% - 85px) * var(--percent-number) / 100);
   z-index: -1;
   transition: all ease 1s;
-
   height: calc(var(--item-height));
   display: inline-block;
 }
