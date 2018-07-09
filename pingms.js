@@ -41,6 +41,14 @@ let img = document.createElement("img") // IMG object for tests
 // ***** ***** *****
 //
 //
+// "onclick" event of "item"
+function itemOnClick()
+{
+    let downloadURL = this.getAttribute("download");
+    window.open(downloadURL, "_blank");
+}
+//
+//
 // Prepare to run tests
 function prepare() {
     const resultArea = document.querySelector("#result");
@@ -86,11 +94,13 @@ function prepare() {
         // }
         //
             const bodyline = document.createElement("div");
-            let result, name;
+            let result, name, tip;
             bodyline.appendChild(result = simpleElement("span", "..."));
             result.className = "result";
             bodyline.appendChild(name = simpleElement("span", item.name));
             name.className = "name";
+            bodyline.appendChild(tip = simpleElement("span", "Test Download"));
+            tip.className = "tip";
             section.appendChild(bodyline);
             subtasks.push({
                 line: bodyline, // "DIV" object of item
@@ -100,6 +110,9 @@ function prepare() {
                 count: 0        // The number of finished tests(including DNS caching)
             });
             bodyline.style.setProperty("--index", i);
+            bodyline.setAttribute("download", item.download);
+            bodyline.style.cursor="pointer";
+            bodyline.onclick=itemOnClick;
             // Index of this target server
             //
         });

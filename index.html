@@ -24,11 +24,16 @@
 </head>
 <body onload="main()">
   <div class="content">
-    <h2>PING ms</h2>
-    <p>Get milliseconds(ms) of HTTP ping, from browser, to cloud, excluding DNS latency, without jitter. Five HTTP requests for each server: the initial request is for caching DNS, and result is the minimum time of the next four requests, avoiding jitter from network and JavaScript.</p>
+    <div class="header">
+      <div class="title">PING&nbsp;ms</div>
+      <div class="introduction">
+        Get milliseconds(ms) of HTTP ping, from browser, to cloud, excluding DNS latency, without jitter. 5 requests for each server: #1 for caching DNS, and result is the minimum of #2#3#4#5.
+        <span class="usage">Click an item to test download.</span>
+        <a href="https://github.com/pingms/pingms">GitHub</a>
+      </div>
+    </div>
     <div id="result">
     </div>
-    <p><a href="https://github.com/pingms/pingms">Source code and documentation at GitHub</a></p>
   </div>
 </body>
 </html>
