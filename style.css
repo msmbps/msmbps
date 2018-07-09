@@ -139,7 +139,7 @@ section>div::after {
 .name {
   /* flex: 1; */
   /* Let all the flexible items be the same length, regardless of its content */
-  /* "flex: 1" is not needed */
+  /* "flex: 1" is disabled */
   display: inline-block;
   height: calc(var(--item-height));
   vertical-align: middle;
@@ -159,10 +159,17 @@ section>div::after {
   border-radius: 4px;
   display: inline-block;
   height: calc(var(--item-height));
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 
-section>div:hover .tip {
+.name:hover .tip {
   animation: tipAnimation 5s ease forwards;
+}
+
+.name:hover {
+  font-weight: bold;
+  font-style: italic;
 }
 
 @keyframes tipAnimation {
@@ -181,11 +188,6 @@ section>div:hover .tip {
     left: calc(100% - 120px);
     opacity: 0;
   }
-}
-
-section>div:hover .name {
-  font-weight: bold;
-  font-style: italic;
 }
 
 .usage {
@@ -213,6 +215,21 @@ img {
   padding-left: 10px;
   padding-bottom: 10px;
   font-size: 13px;
+}
+
+.message {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  width: 200px;
+  margin-top: 0px;
+  margin-left: -100px;
+  background-color: DarkGreen;
+  color: white;
+  z-index: 10000;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 0px 0px 25px 25px;
 }
 
 @media (min-width: 800px) {
