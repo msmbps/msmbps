@@ -244,6 +244,14 @@ function handleTasks() {
         // the object from the tree it belongs to.
         //
         allDone = true;
+        //
+        // All things are done, no more IMG loading: cancel timeOut.
+        try {
+            clearTimeout(timeOutID);
+        }
+        catch(err) {
+            ;
+        }
         return;
     }
     currentSubTasks = tasks.shift();
