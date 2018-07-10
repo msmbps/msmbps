@@ -40,6 +40,7 @@ let startTime = 0; // The start time of current test - a "test" is loading URL
 let maxDelay = 0; // Max delay of a cloud provider
 let img = document.createElement("img"); // IMG object for tests
 let allDone = false; // Whether all have been finished
+let timeOutID = null; // Used for "clearTimeout"
 // ***** ***** *****
 //
 //
@@ -141,14 +142,35 @@ function prepare() {
 }
 //
 //
+// Abort test if it costs too much time
+// (How to test: disable "img.src = src + Math.random()", and it will always cost too much time)
+function timeOut()
+{
+    let callback = img.onerror;
+    img.onerror = null; // Reset IMG object
+    img.src = ""; // Reset IMG object
+    nextTick(callback);
+}
+//
+//
 // Load image and set callback
 function loadImg(src, callback) {
+    try {
+        clearTimeout(timeOutID);
+    }
+    catch(err) {
+        ;
+    }
+    // Before loading, always cancel timeOut.
+    //
     img.src = src + Math.random();
     // This URL is never cached,
     // and it's "404 Not Found"
     // (the size of page does not change much)
     //
     img.onerror = callback;
+    timeOutID = setTimeout(timeOut, 6000);
+    // Max time is 6 seconds.
 }
 //
 //
