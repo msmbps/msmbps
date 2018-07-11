@@ -126,9 +126,14 @@ function prepare() {
                 count: 0        // The number of finished tests(including DNS caching)
             });
             bodyline.style.setProperty("--index", i);
-            name.setAttribute("download", item.download);
-            name.style.cursor="pointer";
-            name.onclick=nameOnClick;
+            if(item.download==void(0)) {
+                tip.textContent = "No Download";
+            }
+            else {
+                name.setAttribute("download", item.download);
+                name.style.cursor="pointer";
+                name.onclick=nameOnClick;
+            }
             // Index of this target server
             //
         });

@@ -202,19 +202,18 @@ img {
 .header {
   display: flex;
   flex-direction: column;
+  padding: 0px 0px 10px 0px;
 }
 
 .title{
   font-size: 26px;
   font-weight: bold;
-  vertical-align: top;
-  padding: 8px 0 0 0;
+  padding: 0px 0px 0px 0px;
 }
 
 .introduction {
-  padding-left: 10px;
-  padding-bottom: 10px;
   font-size: 13px;
+  padding: 0px 0px 0px 10px;
 }
 
 .message {
@@ -232,7 +231,7 @@ img {
   border-radius: 0px 0px 25px 25px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 650px) and (max-width: 949px) {
   #result {
     column-count: 2;
     /* The column-count property specifies */
@@ -254,6 +253,37 @@ img {
   .header {
     display: flex;
     flex-direction: row;
+  }
+  .title {
+    padding: 6px 0px 0px 0px;
+  }
+}
+
+@media (min-width: 950px) {
+  #result {
+    column-count: 3;
+    /* The column-count property specifies */
+    /* the number of columns an element should be divided into */
+    column-gap: 20px;
+    /* The column-gap property specifies the gap between the columns. */
+    column-rule-style: solid;
+    /* Specify the style of the rule between columns */
+    column-rule-width: 1px;
+    /* The column-rule-width property specifies */
+    /* the width of the rule between columns. */
+    column-rule-color: white;
+    /* Specify the color of the rule between columns */
+  }
+  .content {
+    width: 900px;
+  }
+  /* In the mode of "two columns", set ".content" width */
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+  .title {
+    padding: 0px 0px 0px 0px;
   }
 }
 
