@@ -206,6 +206,95 @@ data = {
         name: "San Jose",
         url: "http://sj.lg.virmach.com/",
         download: "http://sj.lg.virmach.com/100MB.test"
+    }],
+    //
+    // Official test URLs of BandwagonHost
+    // (BandwagonHost does not publicly provide test URLs)
+    // (These are obtained by directly asking BandwagonHost)
+    BandwagonHost: [{
+        name: "Los Angeles DC9 CN2 GIA KVM",
+        url: "http://65.49.131.102/"
+    }, {
+        name: "Los Angeles DC3 CN2 KVM",
+        url: "http://23.252.103.101/"
+    }, {
+        name: "Los Angeles DC8 CN2 KVM",
+        url: "http://23.252.99.102/"
+    }, {
+        name: "Los Angeles DC2 QNET KVM",
+        url: "http://23.252.96.201/",
+        download: "http://23.252.96.201/100mb.bin"
+    }, {
+        name: "Los Angeles DC2 QNET OpenVZ",
+        url: "http://104.194.76.20/",
+        download: "http://104.194.76.20/100mb.bin"
+    }, {
+        name: "Los Angeles DC4 MCOM",
+        url: "http://98.142.136.11/",
+        download: "http://98.142.136.11/100mb.bin"
+    }, {
+        name: "Phoenix",
+        url: "http://198.35.46.28/",
+        download: "http://198.35.46.28/100mb.bin"
+    }, {
+        name: "Fremont",
+        url: "http://184.105.138.67/",
+        download: "http://184.105.138.67/100mb.bin"
+    }, {
+        name: "New York",
+        url: "http://208.167.227.122/",
+        download: "http://208.167.227.122/100mb.bin"
+    }, {
+        name: "Netherlands",
+        url: "http://45.62.120.202/",
+        download: "http://45.62.120.202/100mb.bin"
+    }, {
+        name: "Vancouver",
+        url: "http://172.93.32.16/",
+        download: "http://172.93.32.16/100mb.bin"
+    }],
+    //
+    // Source: https://hostus.us/openvz-vps.html
+    HostUS: [{
+        name: "Charlotte",
+        url: "http://clt-lg.hostus.us/",
+        download: "http://clt-lg.hostus.us/100MB.test"
+    }, {
+        name: "Atlanta",
+        url: "http://atl-lg.hostus.us/",
+        download: "http://atl-lg.hostus.us/100MB.test"
+    }, {
+        name: "Dallas",
+        url: "http://dal02-lg.hostus.us/",
+        download: "http://dal02-lg.hostus.us/100MB.test"
+    }, {
+        name: "Los Angeles",
+        url: "http://la-lg.hostus.us/",
+        download: "http://la-lg.hostus.us/100MB.test"
+    }, {
+        name: "Washington DC",
+        url: "http://wdc-lg.hostus.us/",
+        download: "http://wdc-lg.hostus.us/100MB.test"
+    }, {
+        name: "London",
+        url: "http://lon-lg.hostus.us/",
+        download: "http://lon-lg.hostus.us/100MB.test"
+    }, {
+        name: "Amsterdam",
+        url: "http://ams-lg.hostus.us/",
+        download: "http://ams-lg.hostus.us/100MB.test"
+    }, {
+        name: "Hong Kong",
+        url: "http://hk-lg.hostus.us/",
+        download: "http://speedtest.hkg02.softlayer.com/downloads/test100.zip"
+    }, {
+        name: "Sydney",
+        url: "http://syd-lg.hostus.us/",
+        download: "http://speedtest.syd01.softlayer.com/downloads/test100.zip"
+    }, {
+        name: "Singapore",
+        url: "http://sgp-lg.hostus.us/",
+        download: "http://speedtest.sng01.softlayer.com/downloads/test100.zip"
     }]
 };
 //
