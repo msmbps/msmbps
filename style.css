@@ -202,7 +202,6 @@ img {
 .header {
   display: flex;
   flex-direction: column;
-  padding: 3px;
   padding: 0px 0px 10px 0px;
 }
 
@@ -213,7 +212,6 @@ img {
 }
 
 .introduction {
-  padding-left: 10px;
   font-size: 13px;
   padding: 0px 0px 0px 10px;
 }
