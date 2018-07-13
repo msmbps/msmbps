@@ -9,6 +9,9 @@
  * @pingms improved its compatibility.
  * @pingms fixed the bug of horizontal scrollbar(if browser width is not enough)
  * @pingms added "Test Download".
+ * @pingms added 3-column mode.
+ * @codehz contributed the color effect.
+ * @pingms improved the compatibility of color effect.
  *
  * (@pingms - https://github.com/pingms)
  * (@codehz - https://github.com/codehz)
@@ -103,9 +106,8 @@ section>div {
   padding-left: 3px;
 }
 
-section>div::after {
-  /* ::after */
-  /* Insert content after every element, and style the inserted content */
+section>div>div.bar {
+  /* Pseudo elements(":after") are replaced by ordinary elments. */
   content: "";
   position: absolute;
   left: 55px;
@@ -118,7 +120,12 @@ section>div::after {
   /* "--percent" is replaced by "--percent-number" */
   /* background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent)); */
   /* "background: linear-gradient" is disabled for compatibility */
-  background: DarkOliveGreen;
+  /* background: DarkOliveGreen; */
+  /* "background: DarkOliveGreen" is disabled */
+  --barColorR: 0;
+  --barColorG: 255;
+  --barColorB: 0;
+  background: rgb(calc(var(--barColorR)),calc(var(--barColorG)),calc(var(--barColorB)));
   --percent-number: calc(var(--delay) * 100 / var(--max-delay));
   width: calc((100% - 85px) * var(--percent-number) / 100);
   z-index: -1;
