@@ -107,7 +107,7 @@ section>div {
 }
 
 section>div>div.bar {
-  /* Pseudo elements(":after") are replaced by ordinary elments. */
+  /* Pseudo elements(":after") are replaced by ordinary elements. */
   content: "";
   position: absolute;
   left: 55px;

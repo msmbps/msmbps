@@ -129,7 +129,7 @@ function prepare() {
                 result: result, // "SPAN" object of result
                 min: 60000,     // Min of several HTTP pings
                 count: 0,       // The number of finished tests(including DNS caching)
-                bar: bar        // The bar
+                bar: bar        // The bar showing time(length and color)
             });
             bodyline.style.setProperty("--index", i);
             if(item.download==void(0)) {
