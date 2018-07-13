@@ -7,6 +7,7 @@
 // @pingms founded the project.
 // @codehz greatly improved it.
 // @pingms added "Test Download".
+// @pingms added BandwagonHost and HostUS.
 //
 // (@pingms - https://github.com/pingms)
 // (@codehz - https://github.com/codehz)

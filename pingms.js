@@ -8,6 +8,9 @@
 // @codehz greatly improved it.
 // @pingms fixed the jitter problem(with several HTTP pings).
 // @pingms added "Test Download".
+// @pingms added timeout of 6 seconds.
+// @codehz contributed the color effect.
+// @pingms improved the compatibility of color effect.
 //
 // (@pingms - https://github.com/pingms)
 // (@codehz - https://github.com/codehz)
@@ -110,20 +113,23 @@ function prepare() {
         // }
         //
             const bodyline = document.createElement("div");
-            let result, name, tip;
+            let result, name, tip, bar;
             bodyline.appendChild(result = simpleElement("span", "..."));
             result.className = "result";
             bodyline.appendChild(name = simpleElement("span", item.name));
             name.className = "name";
             name.appendChild(tip = simpleElement("span", "Test Download"));
             tip.className = "tip";
+            bodyline.appendChild(bar = simpleElement("div", ""));
+            bar.className = "bar";
             section.appendChild(bodyline);
             subtasks.push({
                 line: bodyline, // "DIV" object of item
                 url: item.url,  // URL of this location
                 result: result, // "SPAN" object of result
                 min: 60000,     // Min of several HTTP pings
-                count: 0        // The number of finished tests(including DNS caching)
+                count: 0,       // The number of finished tests(including DNS caching)
+                bar: bar        // The bar showing time(length and color)
             });
             bodyline.style.setProperty("--index", i);
             if(item.download==void(0)) {
@@ -202,7 +208,8 @@ function handleOneTest()
         task.line.style.setProperty("--delay", task.min);
         currentSubResults.push({
             line: task.line,
-            delay: task.min
+            delay: task.min,
+            bar: task.bar
         });
         // Go to the next "SubTask"(a location of cloud provider)
         nextTick(handleSubTasks);
@@ -227,9 +234,17 @@ function handleSubTasks() {
     //
     currentSubResults.forEach(function (key, index) {
         key.line.style.setProperty("--index", index);
+        // Update "--index" after "sort"
+        //
+        let barColorR = Math.floor(key.delay / maxDelay * 200);
+        let barColorG = Math.floor(255 - key.delay / maxDelay * 128);
+        let barColorB = 0;
+        key.bar.style.setProperty("--barColorR", barColorR);
+        key.bar.style.setProperty("--barColorG", barColorG);
+        key.bar.style.setProperty("--barColorB", barColorB);
+        // Update color of "bar"
+        //
     });
-    // Update "--index" after "sort"
-    //
     if (currentSubTasks.length == 0) {
         return nextTick(handleTasks);
     }
