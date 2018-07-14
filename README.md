@@ -7,6 +7,7 @@
 * [@pingms](https://github.com/pingms) added *Test Download*.
 * [@pingms](https://github.com/pingms) added timeout of 6 seconds.
 * [@pingms](https://github.com/pingms) added BandwagonHost and HostUS.
+* [@pingms](https://github.com/pingms) added 3-column mode.
 * [@codehz](https://github.com/codehz) contributed the color effect.
 * [@pingms](https://github.com/pingms) improved the compatibility of color effect.
 
