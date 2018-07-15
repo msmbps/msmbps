@@ -255,47 +255,50 @@ data = {
         download: "http://172.93.32.16/100mb.bin"
     }],
     //
-    // Source: https://hostus.us/openvz-vps.html
-    HostUS: [{
-        name: "Charlotte",
-        url: "http://clt-lg.hostus.us/",
-        download: "http://clt-lg.hostus.us/100MB.test"
+    // Source: https://www.ramnode.com/
+    RamNode: [{
+        name: "New York City",
+        url: "http://lg.nyc.ramnode.com/",
+        download: "http://lg.nyc.ramnode.com/static/100MB.test"
     }, {
         name: "Atlanta",
-        url: "http://atl-lg.hostus.us/",
-        download: "http://atl-lg.hostus.us/100MB.test"
+        url: "http://lg.atl.ramnode.com/",
+        download: "http://lg.atl.ramnode.com/static/100MB.test"
     }, {
-        name: "Dallas",
-        url: "http://dal02-lg.hostus.us/",
-        download: "http://dal02-lg.hostus.us/100MB.test"
+        name: "Seattle",
+        url: "http://lg.sea.ramnode.com/",
+        download: "http://lg.sea.ramnode.com/static/100MB.test"
     }, {
         name: "Los Angeles",
-        url: "http://la-lg.hostus.us/",
-        download: "http://la-lg.hostus.us/100MB.test"
+        url: "http://lg.la.ramnode.com/",
+        download: "http://lg.la.ramnode.com/static/100MB.test"
     }, {
-        name: "Washington DC",
-        url: "http://wdc-lg.hostus.us/",
-        download: "http://wdc-lg.hostus.us/100MB.test"
+        name: "Netherlands",
+        url: "http://lg.nl.ramnode.com/",
+        download: "http://lg.nl.ramnode.com/static/100MB.test"
+    }],
+    //
+    // Source: https://www.host1plus.com/data-centers/
+    Host1Plus: [{
+        name: "Los Angeles",
+        url: "http://191.101.236.61/",
+        download: "http://191.101.236.61/100mb"
     }, {
-        name: "London",
-        url: "http://lon-lg.hostus.us/",
-        download: "http://lon-lg.hostus.us/100MB.test"
+        name: "Chicago",
+        url: "http://181.214.61.207/",
+        download: "http://181.214.61.207/100mb"
     }, {
-        name: "Amsterdam",
-        url: "http://ams-lg.hostus.us/",
-        download: "http://ams-lg.hostus.us/100MB.test"
+        name: "São Paulo",
+        url: "http://191.96.4.248/",
+        download: "http://191.96.4.248/100mb"
     }, {
-        name: "Hong Kong",
-        url: "http://hk-lg.hostus.us/",
-        download: "http://speedtest.hkg02.softlayer.com/downloads/test100.zip"
+        name: "Frankfurt",
+        url: "http://185.137.13.237/",
+        download: "http://185.137.13.237/100mb"
     }, {
-        name: "Sydney",
-        url: "http://syd-lg.hostus.us/",
-        download: "http://speedtest.syd01.softlayer.com/downloads/test100.zip"
-    }, {
-        name: "Singapore",
-        url: "http://sgp-lg.hostus.us/",
-        download: "http://speedtest.sng01.softlayer.com/downloads/test100.zip"
+        name: "Johannesburg",
+        url: "http://196.251.248.78/",
+        download: "http://196.251.248.78/100mb"
     }]
 };
 //
