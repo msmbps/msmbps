@@ -16,6 +16,208 @@
 //
 // Data of target servers
 data = {
+    MicrosoftAzure: [{
+        name: "Netherlands",
+        url: "http://eu-west-azure.cloudharmony.net/"
+    }, {
+        name: "Ireland",
+        url: "http://eu-north-azure.cloudharmony.net/"
+    }, {
+        name: "Cardiff",
+        url: "http://uk-west-azure.cloudharmony.net/"
+    }, {
+        name: "London",
+        url: "http://uk-south-azure.cloudharmony.net/"
+    }, {
+        name: "Quebec City",
+        url: "http://canada-east-azure.cloudharmony.net/"
+    }, {
+        name: "Toronto",
+        url: "http://canada-central-azure.cloudharmony.net/"
+    }, {
+        name: "California",
+        url: "http://us-west-azure.cloudharmony.net/"
+    }, {
+        name: "West US 2",
+        url: "http://us-west2-azure.cloudharmony.net/"
+    }, {
+        name: "Iowa",
+        url: "http://us-central-azure.cloudharmony.net/"
+    }, {
+        name: "West Central US",
+        url: "http://us-westcentral-azure.cloudharmony.net/"
+    }, {
+        name: "Texas	",
+        url: "http://us-southcentral-azure.cloudharmony.net/"
+    }, {
+        name: "Illinois",
+        url: "http://us-northcentral-azure.cloudharmony.net/"
+    }, {
+        name: "Virginia	2",
+        url: "http://us-east2-azure.cloudharmony.net/"
+    }, {
+        name: "Virginia",
+        url: "http://us-east-azure.cloudharmony.net/"
+    }, {
+        name: "Osaka",
+        url: "http://japan-west.cloudharmony.net/"
+    }, {
+        name: "Tokyo, Saitama",
+        url: "http://japan-east-azure.cloudharmony.net/"
+    }, {
+        name: "Hong Kong",
+        url: "http://asia-east-azure.cloudharmony.net/"
+    }, {
+        name: "Seoul",
+        url: "http://korea-central-azure.cloudharmony.net/"
+    }, {
+        name: "Busan",
+        url: "http://korea-south-azure.cloudharmony.net/"
+    }, {
+        name: "Singapore",
+        url: "http://asia-southeast-azure.cloudharmony.net/"
+    }, {
+        name: "Pune",
+        url: "http://india-central-azure.cloudharmony.net/"
+    }, {
+        name: "Mumbai",
+        url: "http://india-west-azure.cloudharmony.net/"
+    }, {
+        name: "Chennai",
+        url: "http://india-south-azure.cloudharmony.net/"
+    }, {
+        name: "New South Wales",
+        url: "http://australia-east-azure.cloudharmony.net/"
+    }, {
+        name: "Victoria",
+        url: "http://australia-southeast-azure.cloudharmony.net/"
+    }, {
+        name: "Sao Paulo State",
+        url: "http://brazil-south-azure.cloudharmony.net/"
+    }],
+    AmazonWebServices: [{
+        name: "Asia Pacific (Seoul)",
+        url: "http://ap-northeast-2-ec2.cloudharmony.net/"
+    }, {
+        name: "US West (N. California)",
+        url: "http://us-west-1-ec2.cloudharmony.net/"
+    }, {
+        name: "US West (Oregon)",
+        url: "http://us-west-2-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Sydney)",
+        url: "http://ap-southeast-2-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Tokyo)",
+        url: "http://ap-northeast-1-ec2.cloudharmony.net/"
+    }, {
+        name: "EU (Frankfurt)",
+        url: "http://eu-central-1-ec2.cloudharmony.net/"
+    }, {
+        name: "Canada (Central)",
+        url: "http://ca-central-1-ec2.cloudharmony.net/"
+    }, {
+        name: "US East (Ohio)",
+        url: "http://us-east-2-ec2.cloudharmony.net/"
+    }, {
+        name: "EU (Ireland)",
+        url: "http://eu-west-1-ec2.cloudharmony.net/"
+    }, {
+        name: "EU (London)",
+        url: "http://eu-west-2-ec2.cloudharmony.net/"
+    }, {
+        name: "South America (São Paulo)",
+        url: "http://sa-east-1-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Singapore)",
+        url: "http://ap-southeast-1-ec2.cloudharmony.net/"
+    }, {
+        name: "US East (N. Virginia)",
+        url: "http://us-east-1-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Mumbai)",
+        url: "http://ap-south-1-ec2.cloudharmony.net/"
+    }],
+    GoogleCloudEngine: [{
+        name: "Tokyo, Japan",
+        url: "http://asia-northeast1-gce.cloudharmony.net/"
+    }, {
+        name: "Changhua County, Taiwan",
+        url: "http://asia-east1-gce.cloudharmony.net/"
+    }, {
+        name: "Jurong West, Singapore",
+        url: "http://asia-southeast1-gce.cloudharmony.net/"
+    }, {
+        name: "Sydney, Australia",
+        url: "http://australia-southeast1-gce.cloudharmony.net/"
+    }, {
+        name: "Frankfurt, Germany",
+        url: "http://europe-west3-gce.cloudharmony.net/"
+    }, {
+        name: "London, U.K.",
+        url: "http://europe-west2-gce.cloudharmony.net/"
+    }, {
+        name: "St. Ghislain, Belgium",
+        url: "http://europe-west1-gce.cloudharmony.net/"
+    }, {
+        name: "The Dalles, Oregon, USA",
+        url: "http://us-west1-gce.cloudharmony.net/"
+    }, {
+        name: "South Carolina, USA",
+        url: "http://us-east1-gce.cloudharmony.net/"
+    }, {
+        name: "Ashburn, Virginia, USA",
+        url: "http://us-east4-gce.cloudharmony.net/"
+    }, {
+        name: "Council Bluffs, Iowa, USA",
+        url: "http://us-central1-gce.cloudharmony.net/"
+    }, {
+        name: "São Paulo, Brazil",
+        url: "http://southamerica-east1-gce.cloudharmony.net/"
+    }],
+    Bandwagonhost: [{
+        name: "Hong Kong PCCW",
+        url: "http://23.252.97.148/"
+    }, {
+        name: "Los Angeles DC9 CN2 GIA",
+        url: "http://65.49.131.102/"
+    }, {
+        name: "Los Angeles DC3 CN2 KVM QN-1",
+        url: "http://23.252.103.101/"
+    }, {
+        name: "Los Angeles DC8 CN2 KVM QN-2",
+        url: "http://65.49.198.150/"
+    }, {
+        name: "Los Angeles DC8 CN2 KVM C3",
+        url: "http://23.252.99.102/"
+    }, {
+        name: "Los Angeles DC2 KVM QNET",
+        url: "http://23.252.96.201/"
+    }, {
+        name: "Los Angeles DC2 OVZ QNET",
+        url: "http://232.252.103.101/"
+    }, {
+        name: "Los Angeles DC4 MCOM",
+        url: "http://98.142.136.11/"
+    }, {
+        name: "Phoenix USAZ_2",
+        url: "http://198.35.46.28/"
+    }, {
+        name: "Fremont USCA_FMT",
+        url: "http://184.105.138.67/"
+    }, {
+        name: "New York USNY_2",
+        url: "http://208.167.227.122/"
+    }, {
+        name: "Florida",
+        url: "http://23.252.104.22/"
+    }, {
+        name: "Netherlands EUNL_3",
+        url: "http://45.62.120.202/"
+    }, {
+        name: "Vancouver CABC_1",
+        url: "http://172.93.32.16/"
+    }],
     Vultr: [{
         name: "Frankfurt",
         url: "http://fra-de-ping.vultr.com/",
