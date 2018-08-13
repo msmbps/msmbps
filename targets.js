@@ -8,14 +8,16 @@
 // @codehz greatly improved it.
 // @pingms added "Test Download".
 // @pingms added BandwagonHost and HostUS.
+// @pingms removed HostUS, added RamNode and Host1Plus.
+// @pingms added "Page #2 - Less Popular Cloud Providers".
 //
 // (@pingms - https://github.com/pingms)
 // (@codehz - https://github.com/codehz)
 //
 //
 //
-// Data of target servers
-data = {
+// Page #1 - data of target servers
+data1 = {
     Vultr: [{
         name: "Frankfurt",
         url: "http://fra-de-ping.vultr.com/",
@@ -301,6 +303,140 @@ data = {
         download: "http://196.251.248.78/100mb"
     }]
 };
+//
+//
+// Page #2 - data of target servers
+data2 = {
+    //
+    // Source: https://hiformance.com/
+    HiFormance: [{
+        name: "Los Angeles",
+        url: "http://lg.losangeles.ca.hiformance.net/",
+        download: "http://lg.losangeles.ca.hiformance.net/100MB.test"
+    }, {
+        name: "Dallas",
+        url: "http://lg.dallas.tx.hiformance.net/",
+        download: "http://lg.dallas.tx.hiformance.net/100MB.test"
+    }, {
+        name: "Chicago",
+        url: "http://lg.chicago.il.hiformance.net/",
+        download: "http://lg.chicago.il.hiformance.net/100MB.test"
+    }, {
+        name: "Buffalo",
+        url: "http://lg.buffalo.ny.hiformance.net/",
+        download: "http://lg.buffalo.ny.hiformance.net/100MB.test"
+    }, {
+        name: "Atlanta",
+        url: "http://lg.atlanta.ga.hiformance.net/",
+        download: "http://lg.atlanta.ga.hiformance.net/100MB.test"
+    }],
+    //
+    // Source: https://www.budgetvm.com/chicago-datacenter.php
+    BudgetVM: [{
+        name: "Chicago",
+        url: "http://199.231.208.6/",
+        download: "http://199.231.208.6/1GB.test"
+    }, {
+        name: "Dallas",
+        url: "http://192.80.186.135/",
+        download: "http://192.80.186.135/1GB.test"
+    }, {
+        name: "Los Angeles",
+        url: "http://192.157.214.6/",
+        download: "http://192.157.214.6/1GB.test"
+    }, {
+        name: "Miami",
+        url: "http://172.246.125.6/",
+        download: "http://172.246.125.6/1GB.test"
+    }],
+    //
+    // Source: https://iniz.com/our-network
+    INIZ: [{
+        name: "London",
+        url: "http://lon-uk.lg.iniz.com/",
+        download: "http://lon-uk.lg.iniz.com/100MB.test"
+    }, {
+        name: "Amsterdam",
+        url: "http://ams-nl.lg.iniz.com/",
+        download: "http://ams-nl.lg.iniz.com/100MB.test"
+    }, {
+        name: "Ashburn",
+        url: "http://va-us.lg.iniz.com/",
+        download: "http://va-us.lg.iniz.com/100MB.test"
+    }, {
+        name: "Los Angeles",
+        url: "http://la-us.lg.iniz.com/",
+        download: "http://la-us.lg.iniz.com/100MB.test"
+    }, {
+        name: "Singapore",
+        url: "http://sg.lg.syn.ltd.uk/",
+        download: "http://103.254.153.18/speedtest/100mb.bin"
+    }],
+    //
+    // Source: http://speedtest.lv.buyvm.net/
+    BuyVM: [{
+        name: "Las Vegas",
+        url: "http://speedtest.lv.buyvm.net/",
+        download: "http://speedtest.lv.buyvm.net/100MB.test"
+    }, {
+        name: "New Jersey",
+        url: "http://nj-test.buyvm.net/",
+        download: "http://nj-test.buyvm.net/100MB.test"
+    }, {
+        name: "Luxembourg",
+        url: "http://lu-test.buyvm.net/",
+        download: "http://lu-test.buyvm.net/100MB.test"
+    }],
+    //
+    // Source: https://www.hudsonvalleyhost.com/network.php
+    HudsonValleyHost: [{
+        name: "Dallas",
+        url: "http://lg-dal.hudsonvalleyhost.com/",
+        download: "http://lg-dal.hudsonvalleyhost.com/100MB.test"
+    }, {
+        name: "Buffalo",
+        url: "http://lg-buff.hudsonvalleyhost.com/",
+        download: "http://lg-buff.hudsonvalleyhost.com/100MB.test"
+    }, {
+        name: "Los Angeles",
+        url: "http://lg-la.hudsonvalleyhost.com/",
+        download: "http://lg-la.hudsonvalleyhost.com/100MB.test"
+    }, {
+        name: "Chicago",
+        url: "http://lg-chi.hudsonvalleyhost.com/",
+        download: "http://lg-chi.hudsonvalleyhost.com/100MB.test"
+    }, {
+        name: "Atlanta",
+        url: "http://lg-atl.hudsonvalleyhost.com/",
+        download: "http://lg-atl.hudsonvalleyhost.com/100MB.test"
+    }],
+    //
+    // Source: https://www.hostwinds.com/company/datacenters
+    HostWinds: [{
+        name: "Dallas",
+        url: "http://108.174.193.107/",
+        download: "http://108.174.193.107/100mb.zip"
+    }, {
+        name: "Seattle",
+        url: "http://104.168.168.16/",
+        download: "http://104.168.168.16/100mb.zip"
+    }],
+    //
+    // Source: https://www.kdatacenter.com/korea-dedicated-server
+    Kdatacenter: [{
+        name: "Korea",
+        url: "http://downloadtest.kdatacenter.com/",
+        download: "http://downloadtest.kdatacenter.com/100MB"
+    }]
+};
+//
+//
+if(location.hash=="#page2") {
+    data = data2;
+}
+else {
+    data = data1;
+}
 //
 //
 //

@@ -48,6 +48,11 @@ a:link, a:visited, a:hover, a:active {
   color: LightBlue;
 }
 
+.pagelink {
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
 .content {
   /* width: 600px; */
   /* "width: 600px;" is disabled */
