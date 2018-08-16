@@ -301,7 +301,166 @@ data1 = {
         name: "Johannesburg",
         url: "http://196.251.248.78/",
         download: "http://196.251.248.78/100mb"
-    }]
+    }],
+    MicrosoftAzure: [{
+        name: "Netherlands",
+        url: "http://eu-west-azure.cloudharmony.net/"
+    }, {
+        name: "Ireland",
+        url: "http://eu-north-azure.cloudharmony.net/"
+    }, {
+        name: "Cardiff",
+        url: "http://uk-west-azure.cloudharmony.net/"
+    }, {
+        name: "London",
+        url: "http://uk-south-azure.cloudharmony.net/"
+    }, {
+        name: "Quebec City",
+        url: "http://canada-east-azure.cloudharmony.net/"
+    }, {
+        name: "Toronto",
+        url: "http://canada-central-azure.cloudharmony.net/"
+    }, {
+        name: "California",
+        url: "http://us-west-azure.cloudharmony.net/"
+    }, {
+        name: "West US 2",
+        url: "http://us-west2-azure.cloudharmony.net/"
+    }, {
+        name: "Iowa",
+        url: "http://us-central-azure.cloudharmony.net/"
+    }, {
+        name: "West Central US",
+        url: "http://us-westcentral-azure.cloudharmony.net/"
+    }, {
+        name: "Texas	",
+        url: "http://us-southcentral-azure.cloudharmony.net/"
+    }, {
+        name: "Illinois",
+        url: "http://us-northcentral-azure.cloudharmony.net/"
+    }, {
+        name: "Virginia	2",
+        url: "http://us-east2-azure.cloudharmony.net/"
+    }, {
+        name: "Virginia",
+        url: "http://us-east-azure.cloudharmony.net/"
+    }, {
+        name: "Osaka",
+        url: "http://japan-west.cloudharmony.net/"
+    }, {
+        name: "Tokyo, Saitama",
+        url: "http://japan-east-azure.cloudharmony.net/"
+    }, {
+        name: "Hong Kong",
+        url: "http://asia-east-azure.cloudharmony.net/"
+    }, {
+        name: "Seoul",
+        url: "http://korea-central-azure.cloudharmony.net/"
+    }, {
+        name: "Busan",
+        url: "http://korea-south-azure.cloudharmony.net/"
+    }, {
+        name: "Singapore",
+        url: "http://asia-southeast-azure.cloudharmony.net/"
+    }, {
+        name: "Pune",
+        url: "http://india-central-azure.cloudharmony.net/"
+    }, {
+        name: "Mumbai",
+        url: "http://india-west-azure.cloudharmony.net/"
+    }, {
+        name: "Chennai",
+        url: "http://india-south-azure.cloudharmony.net/"
+    }, {
+        name: "New South Wales",
+        url: "http://australia-east-azure.cloudharmony.net/"
+    }, {
+        name: "Victoria",
+        url: "http://australia-southeast-azure.cloudharmony.net/"
+    }, {
+        name: "Sao Paulo State",
+        url: "http://brazil-south-azure.cloudharmony.net/"
+    }],
+    AmazonWebServices: [{
+        name: "Asia Pacific (Seoul)",
+        url: "http://ap-northeast-2-ec2.cloudharmony.net/"
+    }, {
+        name: "US West (N. California)",
+        url: "http://us-west-1-ec2.cloudharmony.net/"
+    }, {
+        name: "US West (Oregon)",
+        url: "http://us-west-2-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Sydney)",
+        url: "http://ap-southeast-2-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Tokyo)",
+        url: "http://ap-northeast-1-ec2.cloudharmony.net/"
+    }, {
+        name: "EU (Frankfurt)",
+        url: "http://eu-central-1-ec2.cloudharmony.net/"
+    }, {
+        name: "Canada (Central)",
+        url: "http://ca-central-1-ec2.cloudharmony.net/"
+    }, {
+        name: "US East (Ohio)",
+        url: "http://us-east-2-ec2.cloudharmony.net/"
+    }, {
+        name: "EU (Ireland)",
+        url: "http://eu-west-1-ec2.cloudharmony.net/"
+    }, {
+        name: "EU (London)",
+        url: "http://eu-west-2-ec2.cloudharmony.net/"
+    }, {
+        name: "South America (São Paulo)",
+        url: "http://sa-east-1-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Singapore)",
+        url: "http://ap-southeast-1-ec2.cloudharmony.net/"
+    }, {
+        name: "US East (N. Virginia)",
+        url: "http://us-east-1-ec2.cloudharmony.net/"
+    }, {
+        name: "Asia Pacific (Mumbai)",
+        url: "http://ap-south-1-ec2.cloudharmony.net/"
+    }],
+    GoogleCloudEngine: [{
+        name: "Tokyo, Japan",
+        url: "http://asia-northeast1-gce.cloudharmony.net/"
+    }, {
+        name: "Changhua County, Taiwan",
+        url: "http://asia-east1-gce.cloudharmony.net/"
+    }, {
+        name: "Jurong West, Singapore",
+        url: "http://asia-southeast1-gce.cloudharmony.net/"
+    }, {
+        name: "Sydney, Australia",
+        url: "http://australia-southeast1-gce.cloudharmony.net/"
+    }, {
+        name: "Frankfurt, Germany",
+        url: "http://europe-west3-gce.cloudharmony.net/"
+    }, {
+        name: "London, U.K.",
+        url: "http://europe-west2-gce.cloudharmony.net/"
+    }, {
+        name: "St. Ghislain, Belgium",
+        url: "http://europe-west1-gce.cloudharmony.net/"
+    }, {
+        name: "The Dalles, Oregon, USA",
+        url: "http://us-west1-gce.cloudharmony.net/"
+    }, {
+        name: "South Carolina, USA",
+        url: "http://us-east1-gce.cloudharmony.net/"
+    }, {
+        name: "Ashburn, Virginia, USA",
+        url: "http://us-east4-gce.cloudharmony.net/"
+    }, {
+        name: "Council Bluffs, Iowa, USA",
+        url: "http://us-central1-gce.cloudharmony.net/"
+    }, {
+        name: "São Paulo, Brazil",
+        url: "http://southamerica-east1-gce.cloudharmony.net/"
+    }],
 };
 //
 //
