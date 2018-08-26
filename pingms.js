@@ -41,6 +41,7 @@ let currentSubTasks = null; // Current locations - "SubTask" is a location of cl
 let currentSubResults = []; // Results of current locations - "SubTask" is a location of cloud provider
 let startTime = 0; // The start time of current test - a "test" is loading URL
 let maxDelay = 0; // Max delay of a cloud provider
+let cycles = 10; // Number of ping cycles
 let img = document.createElement("img"); // IMG object for tests
 let allDone = false; // Whether all have been finished
 let timeOutID = null; // Used for "clearTimeout"
@@ -198,7 +199,7 @@ function handleOneTest()
         }
     }
     // Five HTTP pings are done
-    if(task.count==5) {
+    if(task.count==cycles) {
         // Update the max value of cloud provider
         if (task.min > maxDelay) {
             maxDelay = task.min;
@@ -217,7 +218,7 @@ function handleOneTest()
     }
     // Ping this location
     task.count++;
-    task.result.textContent = (task.count) + "/5";
+    task.result.textContent = (task.count) + "/" + (cycles);
     startTime = new Date().getTime();
     loadImg(task.url, handleOneTest);
 }
@@ -249,7 +250,7 @@ function handleSubTasks() {
         return nextTick(handleTasks);
     }
     task = currentSubTasks.shift();
-    task.result.textContent = "1/5";
+    task.result.textContent = "1/" + (cycles);
     task.count=1;
     // First time to load image (for caching DNS)
     loadImg(task.url, handleOneTest);
