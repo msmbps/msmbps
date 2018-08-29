@@ -20,12 +20,13 @@
   <title>PING ms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="react.production.min.js"></script>
-  <script src="react-dom.production.min.js"></script>
+  <script src="react.development.js"></script>
+  <script src="react-dom.development.js"></script>
+  <script src="babel.min.js"></script>
   <script src="targets.js"></script>
-  <script src="pingms.production.min.js"></script>
+  <script type="text/babel" src="pingms.development.js"></script>
 </head>
-<body onload="main()">
+<body onload="setTimeout('main()',1000)">
   <div class="content">
     <div class="header">
       <div class="title">PING&nbsp;ms</div>
