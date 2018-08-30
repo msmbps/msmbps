@@ -12,9 +12,12 @@
 * [@pingms](https://github.com/pingms) improved the compatibility of color effect.
 * [@pingms](https://github.com/pingms) removed HostUS, added RamNode and Host1Plus.
 * [@pingms](https://github.com/pingms) added *Page #2*.
+* [@pingms](https://github.com/pingms) made code with ReactJS.
+* [@pingms](https://github.com/pingms) made simultaneous HTTP pings.
+* [@pingms](https://github.com/pingms) removed all CSS variables.
 
 ## Internal
-![](https://raw.githubusercontent.com/pingms/pingms/master/Image-Precise.png "")
+* [Image-Precise.png](https://raw.githubusercontent.com/pingms/pingms/master/Image-Precise.png) *Numbers are not absolutely precise.*
 
 ## Web
 [http://www.pingms.com/](http://www.pingms.com/)
