@@ -13,6 +13,7 @@
  * @codehz contributed the color effect.
  * @pingms improved the compatibility of color effect.
  * @pingms removed all CSS variables(done by JSX with ReactJS).
+ * @pingms added "notice" showing server address.
  *
  * (@pingms - https://github.com/pingms)
  * (@codehz - https://github.com/codehz)
@@ -113,7 +114,7 @@ div.section>div.list>div.line>span.name {
 div.section>div.list>div.line>span.name>span.tip {
   position: absolute;
   z-index: 100;
-  width: 120px;
+  width: 140px;
   left: 0px;
   opacity: 0.2;
   visibility: hidden;
@@ -139,17 +140,17 @@ div.section>div.list>div.line>span.name:hover {
 @keyframes tipAnimation {
   10% {
     visibility: visible;
-    left: calc(100% - 120px);
+    left: 140px;
     opacity:1;
   }
   60% {
     visibility: visible;
-    left: calc(100% - 120px);
+    left: 140px;
     opacity: 1;
   }
   100% {
     visibility: hidden;
-    left: calc(100% - 120px);
+    left: 140px;
     opacity: 0;
   }
 }
@@ -193,6 +194,33 @@ img {
   padding: 10px;
   padding-top: 20px;
   border-radius: 0px 0px 25px 25px;
+}
+
+.notice {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  width: 200px;
+  margin-top: 0px;
+  margin-left: -100px;
+  background-color: green;
+  color: white;
+  z-index: 10000;
+  padding: 10px;
+  padding-bottom: 20px;
+  border-radius: 25px 25px 0px 0px;
+  padding-top: 20px;
+}
+
+.server {
+  width: 150px;
+  height: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: 16px;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 650px) and (max-width: 949px) {
