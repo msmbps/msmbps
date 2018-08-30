@@ -12,6 +12,7 @@
  * @pingms added 3-column mode.
  * @codehz contributed the color effect.
  * @pingms improved the compatibility of color effect.
+ * @pingms removed all CSS variables(done by JSX with ReactJS).
  *
  * (@pingms - https://github.com/pingms)
  * (@codehz - https://github.com/codehz)
@@ -22,7 +23,6 @@
 
 * {
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
 }
 
 body {
@@ -31,17 +31,12 @@ body {
   font-size: 14px;
   font-family: Tahoma, Helvetica, Arial, sans-serif;
   margin: 8px;
-  --item-height: 18px;
-  --section-header-height: 30px;
-  /* Double leading dash is used for defining custom properties */
   padding: 10px 0px 10px 0px;
   margin: 0px;
 }
 
 p {
   display: flex;
-  /* This defines a flex container */
-  /* It enables a flex context for all its direct children */
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -54,92 +49,52 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .content {
-  /* width: 600px; */
-  /* "width: 600px;" is disabled */
-  /* because it can cause horizontal scrollbar  */
-  /* if browser width is not enough */
   width: 95%;
-  /* If it's in the mode of "two columns" */
-  /* ".content" width will be changed by "@media (min-width: 800px)"*/
   max-width: calc(100vw - 16px);
-  /* calc() function performs a calculation to be used as the property value */
-  /* vw: 1/100th viewport width */
   margin: 0 auto;
-  /* The first parameter 0 indicates that the top and bottom margins will both be set to 0 */
-  /* The left and right margins will be set to the same size */
 }
 
-section {
+div.section {
   overflow: hidden;
   break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
-  /* Avoids any break (page, column, or region) from being inserted within the principal box */
   top: 0;
   position: relative;
-  --max-delay: 1;
   transition: all ease 1s;
-  /* CSS transitions allows you to change property values smoothly */
-  /* (from one value to another), over a given duration */
-  /* all - specified for the transition-property */
-  /* ease - specifies a transition effect with a slow start, then fast, then end slowly */
-  height: calc(var(--nums) * (var(--item-height) + 2px) + var(--section-header-height));
 }
 
 h3 {
   font-size: 20px;
   font-weight: 900;
-  height: var(--section-header-height);
+  height: 30px;
   margin: 0;
   padding: 0;
 }
 
-section>div {
-  /* > */
-  /* The selector "div > p.some_class" only selects paragraphs of */
-  /* ".some_class" that are nested directly inside a div */
-  /* and not any paragraphs that are nested further within. */
+div.section>div.list>div.line {
   width: 100%;
   position: absolute;
-  height: calc(var(--item-height));
+  height: 18px;
   margin: 1px 0;
   transition: all ease .5s;
   display: flex;
-  --delay: 0;
-  transform: translateY(calc(var(--index) * (var(--item-height) + 2px)));
-  /* The translateY() CSS function repositions an element vertically on the 2D plane */
-  z-index: calc(var(--nums) - var(--index) + 1);
   padding-left: 3px;
 }
 
-section>div>div.bar {
-  /* Pseudo elements(":after") are replaced by ordinary elements. */
+div.section>div.list>div.line>div.bar {
   content: "";
   position: absolute;
   left: 55px;
   right: 0;
   top: 0;
   bottom: 0;
-  /* --base-color: rgb(calc(var(--delay) / var(--max-delay) * 200), calc(255 - var(--delay) / var(--max-delay) * 128), 0); */
-  /* "--base-color" is disabled for compatibility */
-  /* --percent: calc(var(--delay) / var(--max-delay) * 100%); */
-  /* "--percent" is replaced by "--percent-number" */
-  /* background: linear-gradient(to right, var(--base-color) var(--percent), transparent var(--percent)); */
-  /* "background: linear-gradient" is disabled for compatibility */
-  /* background: DarkOliveGreen; */
-  /* "background: DarkOliveGreen" is disabled */
-  --barColorR: 0;
-  --barColorG: 255;
-  --barColorB: 0;
-  background: rgb(calc(var(--barColorR)),calc(var(--barColorG)),calc(var(--barColorB)));
-  --percent-number: calc(var(--delay) * 100 / var(--max-delay));
-  width: calc((100% - 85px) * var(--percent-number) / 100);
   z-index: -1;
   transition: all ease 1s;
-  height: calc(var(--item-height));
+  height: 18px;
   display: inline-block;
 }
 
-.result {
+div.section>div.list>div.line>span.milliseconds {
   display: inline-block;
   width: 55px;
   font-family: 'Lucida Console', Monaco, monospace;
@@ -148,17 +103,14 @@ section>div>div.bar {
   padding-right: .5em;
 }
 
-.name {
-  /* flex: 1; */
-  /* Let all the flexible items be the same length, regardless of its content */
-  /* "flex: 1" is disabled */
+div.section>div.list>div.line>span.name {
   display: inline-block;
-  height: calc(var(--item-height));
+  height: 18px;
   vertical-align: middle;
-  line-height: calc(var(--item-height));
+  line-height: 18px;
 }
 
-.tip {
+div.section>div.list>div.line>span.name>span.tip {
   position: absolute;
   z-index: 100;
   width: 120px;
@@ -170,16 +122,16 @@ section>div>div.bar {
   text-align: center;
   border-radius: 4px;
   display: inline-block;
-  height: calc(var(--item-height));
+  height: 18px;
   font-weight: normal !important;
   font-style: normal !important;
 }
 
-.name:hover .tip {
+div.section>div.list>div.line>span.name:hover span.tip {
   animation: tipAnimation 5s ease forwards;
 }
 
-.name:hover {
+div.section>div.list>div.line>span.name:hover {
   font-weight: bold;
   font-style: italic;
 }
@@ -246,22 +198,14 @@ img {
 @media (min-width: 650px) and (max-width: 949px) {
   #result {
     column-count: 2;
-    /* The column-count property specifies */
-    /* the number of columns an element should be divided into */
     column-gap: 20px;
-    /* The column-gap property specifies the gap between the columns. */
     column-rule-style: solid;
-    /* Specify the style of the rule between columns */
     column-rule-width: 1px;
-    /* The column-rule-width property specifies */
-    /* the width of the rule between columns. */
     column-rule-color: white;
-    /* Specify the color of the rule between columns */
   }
   .content {
     width: 600px;
   }
-  /* In the mode of "two columns", set ".content" width */
   .header {
     display: flex;
     flex-direction: row;
@@ -274,22 +218,14 @@ img {
 @media (min-width: 950px) {
   #result {
     column-count: 3;
-    /* The column-count property specifies */
-    /* the number of columns an element should be divided into */
     column-gap: 20px;
-    /* The column-gap property specifies the gap between the columns. */
     column-rule-style: solid;
-    /* Specify the style of the rule between columns */
     column-rule-width: 1px;
-    /* The column-rule-width property specifies */
-    /* the width of the rule between columns. */
     column-rule-color: white;
-    /* Specify the color of the rule between columns */
   }
   .content {
     width: 900px;
   }
-  /* In the mode of "two columns", set ".content" width */
   .header {
     display: flex;
     flex-direction: row;
