@@ -15,6 +15,7 @@
 * [@pingms](https://github.com/pingms) made code with ReactJS.
 * [@pingms](https://github.com/pingms) made simultaneous HTTP pings.
 * [@pingms](https://github.com/pingms) removed all CSS variables.
+* [@pingms](https://github.com/pingms) added *click to show server*.
 
 ## Internal
 * [Image-Precise.png](https://raw.githubusercontent.com/pingms/pingms/master/Image-Precise.png) *Numbers are not absolutely precise.*
