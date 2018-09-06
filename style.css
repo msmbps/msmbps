@@ -14,6 +14,7 @@
  * @pingms improved the compatibility of color effect.
  * @pingms removed all CSS variables(done by JSX with ReactJS).
  * @pingms added "notice" showing server address.
+ * @pingms made "notice" show both server address and download.
  *
  * (@pingms - https://github.com/pingms)
  * (@codehz - https://github.com/codehz)
@@ -194,27 +195,37 @@ img {
   padding: 10px;
   padding-top: 20px;
   border-radius: 0px 0px 25px 25px;
+  box-shadow: 0 0 5px 5px #000;
 }
 
 .notice {
   position: fixed;
   bottom: 0px;
   left: 50%;
-  width: 200px;
+  width: 240px;
   margin-top: 0px;
-  margin-left: -100px;
+  margin-left: -120px;
   background-color: green;
   color: white;
   z-index: 10000;
   padding: 10px;
-  padding-bottom: 20px;
-  border-radius: 25px 25px 0px 0px;
   padding-top: 20px;
+  border-radius: 25px 25px 0px 0px;
+  text-align: center;
+  box-shadow: 0 0 5px 5px #000;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.larger {
+  font-size: 125%;
 }
 
 .server {
   width: 150px;
-  height: 60px;
+  height: 68px;
   display: block;
   margin-left: auto;
   margin-right: auto;
