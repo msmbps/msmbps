@@ -1,21 +1,3 @@
-//
-//
-//
-// Target servers of "PING ms"
-// The full project is at https://github.com/pingms/pingms
-//
-// @pingms founded the project.
-// @codehz greatly improved it.
-// @pingms added "Test Download".
-// @pingms added BandwagonHost and HostUS.
-// @pingms removed HostUS, added RamNode and Host1Plus.
-// @pingms added "Page #2 - Less Popular Cloud Providers".
-//
-// (@pingms - https://github.com/pingms)
-// (@codehz - https://github.com/codehz)
-//
-//
-//
 // Page #1 - data of target servers
 data1 = {
     Vultr: [{
@@ -205,10 +187,6 @@ data1 = {
         name: "Atlanta",
         url: "http://atl.lg.virmach.com/",
         download: "http://atl.lg.virmach.com/100MB.test"
-    }, {
-        name: "San Jose",
-        url: "http://sj.lg.virmach.com/",
-        download: "http://sj.lg.virmach.com/100MB.test"
     }],
     //
     // Official test URLs of BandwagonHost
@@ -303,8 +281,6 @@ data1 = {
         download: "http://196.251.248.78/100mb"
     }]
 };
-//
-//
 // Page #2 - data of target servers
 data2 = {
     //
@@ -373,19 +349,27 @@ data2 = {
         download: "http://103.254.153.18/speedtest/100mb.bin"
     }],
     //
-    // Source: http://speedtest.lv.buyvm.net/
-    BuyVM: [{
-        name: "Las Vegas",
-        url: "http://speedtest.lv.buyvm.net/",
-        download: "http://speedtest.lv.buyvm.net/100MB.test"
+    // Source: http://lg.ams.nl.ultravps.eu/
+    "UltraVPS.eu": [{
+        name: "Amsterdam",
+        url: "http://lg.ams.nl.ultravps.eu/",
+        download: "http://lg.ams.nl.ultravps.eu/100MB.test"
     }, {
-        name: "New Jersey",
-        url: "http://nj-test.buyvm.net/",
-        download: "http://nj-test.buyvm.net/100MB.test"
+        name: "Duesseldorf",
+        url: "http://lg.dus.de.ultravps.eu/",
+        download: "http://lg.dus.de.ultravps.eu/100MB.test"
     }, {
-        name: "Luxembourg",
-        url: "http://lu-test.buyvm.net/",
-        download: "http://lu-test.buyvm.net/100MB.test"
+        name: "Dallas",
+        url: "http://lg.dal.us.ultravps.eu/",
+        download: "http://lg.dal.us.ultravps.eu/100MB.test"
+    }, {
+        name: "London",
+        url: "http://lg.lon.uk.ultravps.eu/",
+        download: "http://lg.lon.uk.ultravps.eu/100MB.test"
+    }, {
+        name: "Los Angeles",
+        url: "http://lg.lax.us.ultravps.eu/",
+        download: "http://lg.lax.us.ultravps.eu/100MB.test"
     }],
     //
     // Source: https://www.hudsonvalleyhost.com/network.php
@@ -437,11 +421,3 @@ if(location.hash=="#page2") {
 else {
     data = data1;
 }
-//
-//
-//
-// END OF FILE
-// The full project is at https://github.com/pingms/pingms
-//
-//
-//

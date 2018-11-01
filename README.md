@@ -1,25 +1,25 @@
-# PING ms
+# msmbps
 
 ## Changelog
-* [@pingms](https://github.com/pingms) founded this project.
+* [@msmbps](https://github.com/msmbps) founded this project.
 * [@codehz](https://github.com/codehz) *greatly* improved it.
-* [@pingms](https://github.com/pingms) fixed the jitter problem.
-* [@pingms](https://github.com/pingms) added *Test Download*.
-* [@pingms](https://github.com/pingms) added timeout of 6 seconds.
-* [@pingms](https://github.com/pingms) added BandwagonHost and HostUS.
-* [@pingms](https://github.com/pingms) added 3-column mode.
+* [@msmbps](https://github.com/msmbps) fixed the jitter problem.
+* [@msmbps](https://github.com/msmbps) added *Test Download*.
+* [@msmbps](https://github.com/msmbps) added timeout of 6 seconds.
+* [@msmbps](https://github.com/msmbps) added BandwagonHost and HostUS.
+* [@msmbps](https://github.com/msmbps) added 3-column mode.
 * [@codehz](https://github.com/codehz) contributed the color effect.
-* [@pingms](https://github.com/pingms) improved the compatibility of color effect.
-* [@pingms](https://github.com/pingms) removed HostUS, added RamNode and Host1Plus.
-* [@pingms](https://github.com/pingms) added *Page #2*.
-* [@pingms](https://github.com/pingms) made code with ReactJS.
-* [@pingms](https://github.com/pingms) made simultaneous HTTP pings.
-* [@pingms](https://github.com/pingms) removed all CSS variables.
-* [@pingms](https://github.com/pingms) added *click to show server*.
-* [@pingms](https://github.com/pingms) made *click to show server and download*.
+* [@msmbps](https://github.com/msmbps) improved the compatibility of color effect.
+* [@msmbps](https://github.com/msmbps) removed HostUS, added RamNode and Host1Plus.
+* [@msmbps](https://github.com/msmbps) added *Page #2*.
+* [@msmbps](https://github.com/msmbps) made code with ReactJS.
+* [@msmbps](https://github.com/msmbps) made simultaneous HTTP pings.
+* [@msmbps](https://github.com/msmbps) removed all CSS variables.
+* [@msmbps](https://github.com/msmbps) added *click to show server*.
+* [@msmbps](https://github.com/msmbps) made *click to show server and download*.
 
 ## Internal
-* [Image-Precise.png](https://raw.githubusercontent.com/pingms/pingms/master/Image-Precise.png) *Numbers are not absolutely precise.*
+* [Image-Precise.png](https://raw.githubusercontent.com/msmbps/msmbps/master/Image-Precise.png) *Numbers are not absolutely precise.*
 
 ## Web
-[http://www.pingms.com/](http://www.pingms.com/)
+[https://www.msmbps.com/](https://www.msmbps.com/)

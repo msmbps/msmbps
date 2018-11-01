@@ -1,26 +1,3 @@
-//
-//
-//
-// JSX code of "PING ms"
-// The full project is at https://github.com/pingms/pingms
-//
-// @pingms founded the project.
-// @codehz greatly improved it.
-// @pingms fixed the jitter problem(with several HTTP pings).
-// @pingms added "Test Download".
-// @pingms added timeout of 6 seconds.
-// @codehz contributed the color effect.
-// @pingms improved the compatibility of color effect.
-// @pingms converted native JS into JSX with ReactJS.
-// @pingms made simultaneous HTTP pings.
-// @pingms added "Notice" showing server address.
-// @pingms made "Notice" show both server address and download.
-//
-// (@pingms - https://github.com/pingms)
-// (@codehz - https://github.com/codehz)
-//
-//
-//
 class Bar extends React.Component {
     render() {
         return <div className="bar" style={{background: "rgb("+
@@ -335,11 +312,3 @@ class App extends React.Component {
 function main() {
     ReactDOM.render(<App />, document.getElementById("result"));
 }
-//
-//
-//
-// END OF FILE
-// The full project is at https://github.com/pingms/pingms
-//
-//
-//
