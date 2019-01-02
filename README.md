@@ -17,7 +17,7 @@
 * [@msmbps](https://github.com/msmbps) removed all CSS variables.
 * [@msmbps](https://github.com/msmbps) added *click to show server*.
 * [@msmbps](https://github.com/msmbps) made *click to show server and download*.
-* [@ky0nch3ng](https://github.com/ky0nch3ng) contributed *cloudharmony* targets.
+* [@ky0nch3ng](https://github.com/ky0nch3ng) contributed *cloudharmony* targets(AWS/Azure/GCE).
 * [@msmbps](https://github.com/msmbps) added *imgmb*(use image file to test download).
 
 ## Internal
