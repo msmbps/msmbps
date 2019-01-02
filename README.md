@@ -17,9 +17,14 @@
 * [@msmbps](https://github.com/msmbps) removed all CSS variables.
 * [@msmbps](https://github.com/msmbps) added *click to show server*.
 * [@msmbps](https://github.com/msmbps) made *click to show server and download*.
+* [@ky0nch3ng](https://github.com/ky0nch3ng) contributed *cloudharmony* targets.
+* [@msmbps](https://github.com/msmbps) added *imgmb*(use image file to test download).
 
 ## Internal
-* [Image-Precise.png](https://raw.githubusercontent.com/msmbps/msmbps/master/Image-Precise.png) *Numbers are not absolutely precise.*
+* [Image-Precise-Latency.png](https://raw.githubusercontent.com/msmbps/msmbps/master/Image-Precise-Latency.png)
+* [Image-Precise-Download.png](https://raw.githubusercontent.com/msmbps/msmbps/master/Image-Precise-Download.png)
+
+*Numbers are not absolutely precise.*
 
 ## Web
 [https://www.msmbps.com/](https://www.msmbps.com/)
