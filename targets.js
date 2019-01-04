@@ -660,6 +660,9 @@ data4 = {
         name: "Sydney, Australia",
         url: "http://australia-southeast1-gce.cloudharmony.net/"
     }, {
+        name: "Hong Kong S.A.R, China",
+        url: "http://35.220.162.209/"
+    },  {
         name: "Frankfurt, Germany",
         url: "http://europe-west3-gce.cloudharmony.net/"
     }, {
