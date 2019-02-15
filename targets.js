@@ -214,10 +214,6 @@ data1 = {
         url: "http://98.142.136.11/",
         download: "http://98.142.136.11/100mb.bin"
     }, {
-        name: "Phoenix",
-        url: "http://198.35.46.28/",
-        download: "http://198.35.46.28/100mb.bin"
-    }, {
         name: "Fremont",
         url: "http://184.105.138.80/",
         download: "http://184.105.138.80/100mb.bin"
@@ -225,6 +221,10 @@ data1 = {
         name: "New York",
         url: "http://208.167.227.122/",
         download: "http://208.167.227.122/100mb.bin"
+    }, {
+        name: "New Jersey",
+        url: "http://23.29.138.5/",
+        download: "http://23.29.138.5/100mb.bin"
     }, {
         name: "Netherlands",
         url: "http://45.62.120.202/",
@@ -325,23 +325,23 @@ data2 = {
     // Source: https://iniz.com/our-network
     INIZ: [{
         name: "London",
-        url: "http://lon-uk.lg.iniz.com/",
-        download: "http://lon-uk.lg.iniz.com/100MB.test"
+        url: "https://lon.lg.iniz.com/",
+        download: "https://lon.lg.iniz.com/100MB.test"
     }, {
         name: "Amsterdam",
-        url: "http://ams-nl.lg.iniz.com/",
-        download: "http://ams-nl.lg.iniz.com/100MB.test"
+        url: "https://ams.lg.iniz.com/",
+        download: "https://ams.lg.iniz.com/100MB.test"
     }, {
         name: "Ashburn",
-        url: "http://va-us.lg.iniz.com/",
-        download: "http://va-us.lg.iniz.com/100MB.test"
+        url: "https://ash.lg.iniz.com/",
+        download: "https://ash.lg.iniz.com/100MB.test"
     }, {
         name: "Los Angeles",
-        url: "http://la-us.lg.iniz.com/",
-        download: "http://la-us.lg.iniz.com/100MB.test"
+        url: "https://la.lg.iniz.com/",
+        download: "https://la.lg.iniz.com/100MB.test"
     }, {
         name: "Singapore",
-        url: "http://sg.lg.syn.ltd.uk/",
+        url: "https://sg.lg.iniz.com/",
         download: "http://103.254.153.18/speedtest/100mb.bin"
     }],
     //
