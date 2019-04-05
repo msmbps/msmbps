@@ -60,6 +60,10 @@ data1 = {
         name: "Sydney",
         url: "http://syd-au-ping.vultr.com/",
         download: "http://syd-au-ping.vultr.com/vultr.com.100MB.bin"
+    }, {
+        name: "Toronto",
+        url: "http://tor-ca-ping.vultr.com/",
+        download: "http://tor-ca-ping.vultr.com/vultr.com.100MB.bin"
     }],
     Linode: [{
         name: "Newark",
