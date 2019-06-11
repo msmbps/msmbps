@@ -454,6 +454,9 @@ data3 = {
         name: "Asia Pacific (Singapore)",
         url: "http://ap-southeast-1-ec2.cloudharmony.net/"
     }, {
+        name: "Asia Pacific (Hong Kong)",
+        url: "http://ap-east-1-ec2.cloudharmony.net/"
+    },{
         name: "US East (N. Virginia)",
         url: "http://us-east-1-ec2.cloudharmony.net/"
     }, {
