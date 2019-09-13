@@ -191,6 +191,10 @@ data1 = {
         name: "Atlanta",
         url: "http://atl.lg.virmach.com/",
         download: "http://atl.lg.virmach.com/100MB.test"
+    }, {
+        name: "San Jose",
+        url: "http://sj.lg.virmach.com/",
+        download: "http://sj.lg.virmach.com/100MB.test"
     }],
     //
     // Official test URLs of BandwagonHost
@@ -373,7 +377,7 @@ data2 = {
     }],
     //
     // Source: https://www.hudsonvalleyhost.com/network.php
-    HudsonValleyHost: [{
+    /*HudsonValleyHost: [{
         name: "Dallas",
         url: "http://lg-dal.hudsonvalleyhost.com/",
         download: "http://lg-dal.hudsonvalleyhost.com/100MB.test"
@@ -393,6 +397,17 @@ data2 = {
         name: "Atlanta",
         url: "http://lg-atl.hudsonvalleyhost.com/",
         download: "http://lg-atl.hudsonvalleyhost.com/100MB.test"
+    }],*/
+    //
+    //https://hosteons.com/
+    Hosteons: [{
+        name: "LA",
+        url: "http://lg.hosteons.com/",
+        download: "http://lg.hosteons.com/100MB.test"
+    }, {
+        name: "NY",
+        url: "http://lg.ny.hosteons.com/",
+        download: "http://lg.ny.hosteons.com/100MB.test"
     }],
     //
     // Source: https://www.hostwinds.com/company/datacenters
@@ -404,13 +419,6 @@ data2 = {
         name: "Seattle",
         url: "http://104.168.168.16/",
         download: "http://104.168.168.16/100mb.zip"
-    }],
-    //
-    // Source: https://www.kdatacenter.com/korea-dedicated-server
-    Kdatacenter: [{
-        name: "Korea",
-        url: "http://downloadtest.kdatacenter.com/",
-        download: "http://downloadtest.kdatacenter.com/100MB"
     }]
 };
 // Page #3 - AWS
@@ -525,10 +533,10 @@ data3 = {
     }, {
         name: "US West (Oregon)",
         url: "http://s3.us-west-2.amazonaws.com/"
-    }, {
+    },/* {
         name: "Asia Pacific (Mumbai)",
         url: "http://s3.ap-south-1.amazonaws.com/"
-    }, {
+    },*/ {
         name: "Asia Pacific (Osaka-Local)",
         url: "http://s3.ap-northeast-3.amazonaws.com/"
     },/* {
@@ -537,19 +545,19 @@ data3 = {
     },*/ {
         name: "Asia Pacific (Singapore)",
         url: "http://s3.ap-southeast-1.amazonaws.com/"
-    }, {
+    },/* {
         name: "Asia Pacific (Sydney)",
         url: "http://s3.ap-southeast-2.amazonaws.com/"
-    }, {
+    },*/ {
         name: "Asia Pacific (Tokyo)",
         url: "http://s3.ap-northeast-1.amazonaws.com/"
     },/* {
         name: "Canada (Central)",
         url: "http://s3.ca-central-1.amazonaws.com/"
-    },*/ {
+    },*//* {
         name: "EU (Frankfurt)",
         url: "http://s3.eu-central-1.amazonaws.com/"
-    }, {
+    },*/ {
         name: "EU (Ireland)",
         url: "http://s3.eu-west-1.amazonaws.com/"
     },/* {
